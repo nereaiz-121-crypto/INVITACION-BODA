@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nerea & Iñaki - 11 de JULIO de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* --- FONDO TEXTURA PAPEL --- */
+
+body {
+
+    margin: 0;
+
+    font-family: 'Playfair Display', serif;
+
+    color: #3b3b3b;
+
+    text-align: center;
+
+    background-color: #f5f1e8;
+
+    background-image: 
+
+        radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+
+        radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+
+    background-size: 4px 4px, 6px 6px;
+
+    background-position: 0 0, 2px 2px;
+
+    padding: 20px;
+
+}
+
+/* --- PANTALLA INICIAL --- */
+
+#pantalla-inicial {
+
+    position:fixed;
+
+    width:100%;
+
+    height:100vh;
+
+    background:#f5f1e8;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:9999;
+
+    transition:opacity 1.2s ease;
+
+    box-sizing: border-box;
+
+}
+
+.nombres-portada {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 4em;
+
+    color: #8c6b3f;
+
+    margin-bottom: 10px;
+
+}
+
+#pantalla-inicial p {
+
+    letter-spacing:3px;
+
+    margin-bottom:30px;
+
+}
+
+#pantalla-inicial button {
+
+    padding:14px 35px;
+
+    border:1px solid #8c6b3f;
+
+    background:transparent;
+
+    color:#8c6b3f;
+
+    font-size:0.9em;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    cursor:pointer;
+
+    transition:all 0.3s ease;
+
+}
+
+#pantalla-inicial button:hover {
+
+    background:#8c6b3f;
+
+    color:white
+ 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nerea & Iñaki - 11 de JULIO de 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+/* --- FONDO TEXTURA PAPEL --- */
+
+body {
+
+    margin: 0;
+
+    font-family: 'Playfair Display', serif;
+
+    color: #3b3b3b;
+
+    text-align: center;
+
+    background-color: #f5f1e8;
+
+    background-image: 
+
+        radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+
+        radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+
+    background-size: 4px 4px, 6px 6px;
+
+    background-position: 0 0, 2px 2px;
+
+    padding: 20px;
+
+}
+
+/* --- PANTALLA INICIAL --- */
+
+#pantalla-inicial {
+
+    position:fixed;
+
+    width:100%;
+
+    height:100vh;
+
+    background:#f5f1e8;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:9999;
+
+    transition:opacity 1.2s ease;
+
+    box-sizing: border-box;
+
+}
+
+.nombres-portada {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 4em;
+
+    color: #8c6b3f;
+
+    margin-bottom: 10px;
+
+}
+
+#pantalla-inicial p {
+
+    letter-spacing:3px;
+
+    margin-bottom:30px;
+
+}
+
+#pantalla-inicial button {
+
+    padding:14px 35px;
+
+    border:1px solid #8c6b3f;
+
+    background:transparent;
+
+    color:#8c6b3f;
+
+    font-size:0.9em;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    cursor:pointer;
+
+    transition:all 0.3s ease;
+
+}
+
+#pantalla-inicial button:hover {
+
+    background:#8c6b3f;
+
+    color:white;
+
+}
+
+/* --- HEADER --- */
+
+header {
+
+    padding: 120px 20px 80px;
+
+    background: linear-gradient(rgba(245,241,232,0.95), rgba(245,241,232,0.95)),
+
+                url("ronda.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    border-radius: 20px;
+
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+
+}
+
+/* --- MONOGRAMA --- */
+
+.monograma {
+
+    width: 120px;
+
+    height: 120px;
+
+    border-radius: 50%;
+
+    margin: 0 auto 40px auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    background: radial-gradient(circle at 30% 30%, #fff9f0, #f5f1e8);
+
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.1);
+
+}
+
+.monograma span {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 2.5em;
+
+    background: linear-gradient(45deg, #d4af37, #ffd700, #b8860b);
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    font-weight: 700;
+
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+
+}
+
+/* --- TITULO --- */
+
+h1 {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 3.5em;
+
+    color:#8c6b3f;
+
+    margin-bottom: 10px;
+
+}
+
+.fecha {
+
+    font-size: 1em;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 30px;
+
+    text-transform: uppercase;
+
+}
+
+/* --- MINI CARRUSEL --- */
+
+.mini-carrusel {
+
+    position: relative;
+
+    width: 280px;
+
+    height: 380px;
+
+    margin: 40px auto;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+
+}
+
+.mini-carrusel img {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    transition: opacity 1.5s ease;
+
+}
+
+.mini-carrusel img.activa {
+
+    opacity: 1;
+
+}
+
+.cuenta-atras {
+
+    font-size: 1.1em;
+
+    margin-top: 30px;
+
+}
+
+/* --- SECCIONES --- */
+
+section {
+
+    padding: 80px 20px;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition: all 1s ease;
+
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    background: #f8f6f2;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+
+    position: relative;
+
+    border-radius: 20px;
+
+}
+
+/* Bordes florales negros */
+
+section::before, section::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    pointer-events: none;
+
+    top: 0;
+
+    left: 0;
+
+    border: 2px solid black;
+
+    border-radius: 20px;
+
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+}
+
+/* Títulos dorados cursiva */
+
+h2 {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: 1.8em;
+
+    margin-bottom: 30px;
+
+    letter-spacing: 1px;
+
+    color: #d4af37;
+
+    font-style: italic;
+
+}
+
+section.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+/* --- BOTÓN ELEGANTE --- */
+
+.boton {
+
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:14px 40px;
+
+    border:1px solid #8c6b3f;
+
+    color:#8c6b3f;
+
+    text-decoration:none;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    font-size:0.8em;
+
+    transition:all 0.3s ease;
+
+    border-radius: 8px;
+
+}
+
+.boton:hover {
+
+    background:#8c6b3f;
+
+    color:white;
+
+}
+
+/* --- CAJA CUENTA --- */
+
+.cuenta-box {
+
+    margin-top:30px;
+
+    padding:30px;
+
+    background:white;
+
+    max-width:500px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+    border-radius:12px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+
+}
+
+footer {
+
+    padding: 40px 20px;
+
+    font-size: 0.9em;
+
+}
+
+@media (max-width: 768px) {
+
+    h1 { font-size: 2.5em; }
+
+    .nombres-portada { font-size: 3em; }
+
+    .mini-carrusel {
+
+        width: 220px;
+
+        height: 300px;
+
+    }
+
+}
+</style>
+</head>
+<body>
+<div id="pantalla-inicial">
+<div class="nombres-portada">Nerea & Iñaki</div>
+<p>11 DE JULIO DE 2026 · RONDA</p>
+<button onclick="abrirInvitacion()">Abrir invitación</button>
+</div>
+<header>
+<div class="monograma">
+<span>N & I</span>
+</div>
+<h1>Nerea & Iñaki</h1>
+<div class="fecha">11 DE JULIO DE 2026</div>
+<div class="mini-carrusel">
+<img src="foto1.jpg" class="activa">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+</div>
+<div class="cuenta-atras" id="contador"></div>
+</header>
+<section>
+<h2>Programa del día</h2>
+<img src="programa.PNG" style="width:85%;max-width:600px;">
+</section>
+<section>
+<h2>Confirmación de asistencia</h2>
+<p>Por favor, confirma tu asistencia antes del <strong>21 de marzo de 2026</strong>.</p>
+<a class="boton" href="https://docs.google.com/forms/d/e/1FAIpQLSfqXMHrm615boPe7YyzUk5AhUR8w9_5d807FafDdk79SJjrnA/viewform?usp=header" target="_blank">
+
+        Confirmar asistencia
+</a>
+<p style="margin-top:25px; font-style:italic;">Será un placer compartir este día contigo</p>
+</section>
+<section>
+<h2>Ubicación</h2>
+<p>Nos casamos en la preciosa ciudad de Ronda</p>
+<div style="max-width:900px; margin:auto; margin-top:30px;">
+<h3 style="font-family: 'Great Vibes', cursive; font-style:italic;">⛪ Ceremonia</h3>
+<p>Iglesia de Padre Jesús<br>Ronda, Málaga</p>
+<iframe src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="300" style="border:0; border-radius:10px; margin-bottom:30px;" loading="lazy"></iframe>
+<h3 style="font-family: 'Great Vibes', cursive; font-style:italic;">🌿 Celebración</h3>
+<p>Heredad Los Alba<br>Carretera Algeciras, Ronda</p>
+<iframe src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" width="100%" height="300" style="border:0; border-radius:10px;" loading="lazy"></iframe>
+</div>
+</section>
+<section>
+<h2>Regalo</h2>
+<p>Si deseáis tener un detalle con nosotros, podéis ayudarnos a comenzar esta nueva etapa.</p>
+<div class="cuenta-box">
+<p><strong>Cuenta bancaria</strong></p>
+<p>ES00 0000 0000 0000 0000 0000</p>
+</div>
+</section>
+<footer>
+
+    Con mucho cariño, os esperamos
+</footer>
+<script>
+
+function abrirInvitacion(){
+
+    document.getElementById("pantalla-inicial").style.opacity = "0";
+
+    setTimeout(function(){
+
+        document.getElementById("pantalla-inicial").style.display = "none";
+
+    },1200);
+
+}
+
+const imagenes = document.querySelectorAll(".mini-carrusel img");
+
+let indice = 0;
+
+setInterval(() => {
+
+    imagenes[indice].classList.remove("activa");
+
+    indice = (indice + 1) % imagenes.length;
+
+    imagenes[indice].classList.add("activa");
+
+}, 4000);
+
+const fechaBoda = new Date("July 11, 2026 00:00:00").getTime();
+
+const contador = setInterval(function() {
+
+    const ahora = new Date().getTime();
+
+    const diferencia = fechaBoda - ahora;
+
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+
+    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+
+    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+    document.getElementById("contador").innerHTML =
+
+        dias + " días " + horas + "h " + minutos + "m " + segundos + "s ";
+
+    if (diferencia < 0) {
+
+        clearInterval(contador);
+
+        document.getElementById("contador").innerHTML = "¡Hoy es el gran día!";
+
+    }
+
+}, 1000);
+
+const secciones = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+
+    secciones.forEach(sec => {
+
+        const posicion = sec.getBoundingClientRect().top;
+
+        if(posicion < window.innerHeight - 100){
+
+            sec.classList.add("visible");
+
+        }
+
+    });
+
+});
+</script>
+</body>
+</html>
+ 
