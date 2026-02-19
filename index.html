@@ -21,7 +21,7 @@ body {
 }
 p { font-size: 1em; line-height: 1.8; font-weight: 400; }
 
-/* --- PANTALLA INICIAL SIMPLE --- */
+/* --- PANTALLA INICIAL --- */
 #pantalla-inicial {
     position: fixed;
     inset: 0;
@@ -38,22 +38,22 @@ p { font-size: 1em; line-height: 1.8; font-weight: 400; }
 }
 
 #pantalla-inicial .preliminar-frase {
-    font-size: 0.9em;
-    letter-spacing: 4px;
+    font-size: 1em;
+    letter-spacing: 3px;
     margin-bottom: 15px;
     opacity: 0.85;
 }
 
 #pantalla-inicial .nombres-pre {
     font-family: 'Italianno', cursive;
-    font-size: 3.5em;
+    font-size: 3em;
     margin-bottom: 10px;
 }
 
 #pantalla-inicial .fecha-pre,
 #pantalla-inicial .lugar-pre {
-    letter-spacing: 3px;
-    font-size: 0.9em;
+    letter-spacing: 2px;
+    font-size: 1em;
     margin-bottom: 10px;
     opacity: 0.9;
 }
@@ -61,16 +61,16 @@ p { font-size: 1em; line-height: 1.8; font-weight: 400; }
 #pantalla-inicial .boton {
     display: inline-block;
     margin-top: 20px;
-    padding: 14px 35px;
-    min-width: 220px;
+    padding: 16px 40px;
+    width: 70%;
+    max-width: 250px;
     border: 1.5px solid rgba(255,255,255,0.9);
-    border-radius: 30px;
+    border-radius: 35px;
     text-decoration: none;
     color: white;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    font-size: 0.95em;
-    text-align: center;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    font-size: 1em;
     cursor: pointer;
     background-color: transparent;
     transition: all 0.2s ease;
@@ -81,52 +81,56 @@ p { font-size: 1em; line-height: 1.8; font-weight: 400; }
 
 /* --- HEADER --- */
 header {
-    padding: 110px 20px 70px;
+    padding: 100px 20px 50px;
     background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url("ronda.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
+    text-align: center;
 }
-header h1 { font-family: 'Italianno', cursive; font-size: 4.2em; letter-spacing: 2px; }
-.fecha-header { letter-spacing: 4px; margin-top: 10px; }
-.lugar-header { letter-spacing: 3px; font-size: 0.9em; margin-bottom: 25px; opacity: 0.85; }
+header h1 { font-family: 'Italianno', cursive; font-size: 3em; letter-spacing: 1.5px; }
+.fecha-header { letter-spacing: 2px; margin-top: 10px; }
+.lugar-header { letter-spacing: 1.5px; font-size: 0.9em; margin-bottom: 20px; opacity: 0.85; }
 
 /* --- CUENTA ATRÁS --- */
 .cuenta-atras {
-    padding: 18px 36px;
+    padding: 12px 25px;
     border-radius: 50px;
     border: 1px solid rgba(0,0,0,0.25);
-    background: rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.8);
     font-family: 'Montserrat', sans-serif;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     display: inline-block;
+    font-size: 0.9em;
 }
 
 /* --- FOTOS --- */
-.fotos img { width: 260px; margin: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.fotos img { width: 90%; max-width: 280px; margin: 15px auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display:block; }
 
 /* --- SECCIONES --- */
-section { padding: 80px 20px; opacity: 0; transform: translateY(20px); transition: all 1s ease; background-color: #ffffff; }
+section { padding: 60px 15px; opacity: 0; transform: translateY(20px); transition: all 1s ease; background-color: #ffffff; text-align:center; }
 section.visible { opacity: 1; transform: translateY(0); }
-section h2 { font-family: 'Montserrat', sans-serif !important; font-size: 2.1em; font-style: italic; font-weight: 500; margin-bottom: 35px; }
+section h2 { font-family: 'Montserrat', sans-serif !important; font-size: 1.8em; font-style: italic; font-weight: 500; margin-bottom: 25px; }
 
 /* --- IMAGENES --- */
-.programa img, .ubicacion img { width: 85%; max-width: 600px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.programa img, .ubicacion img { width: 90%; max-width: 500px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin:auto; display:block; }
+
+/* --- BOTONES SECCIONES ---
+section .boton { width: 80%; max-width: 250px; padding: 14px 35px; font-size:1em; } */
 
 /* --- FOOTER --- */
-footer { padding: 50px 20px; font-size: 0.9em; }
+footer { padding: 40px 15px; font-size: 0.9em; }
 
 /* --- FLECHA DESPLAZAR ABAJO --- */
 .flecha-scroll {
     position: fixed;
     left: 50%;
-    bottom: 30px;
+    bottom: 20px;
     transform: translateX(-50%);
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background-color: rgba(85,107,47,0.1);
-    display: none;
     cursor: pointer;
     z-index: 1000;
     display: flex;
@@ -136,14 +140,16 @@ footer { padding: 50px 20px; font-size: 0.9em; }
     animation: bounce 1.5s infinite;
     transition: opacity 0.8s ease;
 }
-.flecha-scroll svg { width: 30px; height: 30px; stroke: #000000; }
+.flecha-scroll svg { width: 22px; height: 22px; stroke: #000000; }
 @keyframes bounce { 0%,20%,50%,80%,100%{ transform: translateX(-50%) translateY(0);} 40%{ transform: translateX(-50%) translateY(10px);} 60%{ transform: translateX(-50%) translateY(5px);} }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-    header h1, #pantalla-inicial .nombres-pre { font-size: 2.5em; }
-    .fotos img, .programa img, .ubicacion img { width: 90%; }
-    .flecha-scroll svg { width: 25px; height: 25px; }
+@media (max-width: 480px) {
+    #pantalla-inicial .nombres-pre { font-size: 2.5em; }
+    header h1 { font-size: 2.2em; }
+    .cuenta-atras { font-size: 0.8em; padding: 10px 20px; }
+    .fotos img, .programa img, .ubicacion img { max-width: 90%; }
+    #pantalla-inicial .boton { width: 80%; padding: 14px 25px; font-size: 0.95em; }
 }
 </style>
 </head>
@@ -156,7 +162,7 @@ footer { padding: 50px 20px; font-size: 0.9em; }
     <h1 class="nombres-pre">Iñaki y Nerea</h1>
     <p class="fecha-pre">11 · JULIO · 2026</p>
     <p class="lugar-pre">Ronda, Málaga</p>
-    <a href="#" class="boton" onclick="abrirInvitacion()">Abrir invitación</a>
+    <a href="#" class="boton" onclick="abrirInvitacion(event)">Abrir invitación</a>
 </div>
 
 <header>
@@ -193,14 +199,14 @@ footer { padding: 50px 20px; font-size: 0.9em; }
     <div class="ubicacion">
         <img src="ronda.jpg" alt="Iglesia y finca">
     </div>
-    <div style="max-width:900px; margin:auto; margin-top:30px;">
+    <div style="max-width:900px; margin:auto; margin-top:20px;">
         <h3><span>✝</span> Ceremonia</h3>
         <p>Iglesia de Padre Jesús<br>C/ Real, 13<br>Ronda, Málaga</p>
-        <iframe src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="300" style="border:0; border-radius:10px; margin-bottom:30px;" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-bottom:20px;" loading="lazy"></iframe>
 
         <h3><span>✧</span> Celebración</h3>
         <p>Heredad Los Alba<br>Carretera Algeciras, Ronda</p>
-        <iframe src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" width="100%" height="300" style="border:0; border-radius:10px;" loading="lazy"></iframe>
+        <iframe src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px;" loading="lazy"></iframe>
     </div>
 </section>
 
@@ -209,7 +215,7 @@ footer { padding: 50px 20px; font-size: 0.9em; }
     <p style="max-width:700px; margin:20px auto; line-height:1.8;">
         Vuestra compañía será nuestro mayor regalo, pero si deseáis tener un detalle con nosotros, podéis ayudarnos a comenzar esta nueva etapa.
     </p>
-    <div style="margin-top:30px; padding:25px; background:white; max-width:500px; margin-left:auto; margin-right:auto; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+    <div style="margin-top:20px; padding:20px; background:white; max-width:400px; margin-left:auto; margin-right:auto; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
         <p><strong>Cuenta bancaria</strong></p>
         <p>ES00 0000 0000 0000 0000 0000</p>
         <p style="font-size:0.8em; color:#555;">¡Gracias!</p>
@@ -230,7 +236,8 @@ footer { padding: 50px 20px; font-size: 0.9em; }
 
 <script>
 // --- ABRIR INVITACIÓN ---
-function abrirInvitacion() {
+function abrirInvitacion(event){
+    event.preventDefault();
     const pantalla = document.getElementById("pantalla-inicial");
     pantalla.style.opacity = "0";
     setTimeout(() => {
@@ -252,421 +259,35 @@ function scrollAbajo(){
     primeraSeccion.scrollIntoView({behavior: "smooth"});
 }
 
-// --- OCULTAR FLECHA AL LLEGAR A SECCIÓN ---
+// --- FLECHA DINÁMICA SEGÚN SCROLL ---
 const flecha = document.getElementById("flecha");
 const primeraSeccion = document.querySelector("section");
-window.addEventListener("scroll", function ocultarFlecha(){
-    const posicionSeccion = primeraSeccion.getBoundingClientRect().top;
-    if(posicionSeccion <= window.innerHeight / 2){
-        flecha.style.opacity = "0";
-        setTimeout(() => { flecha.style.display = "none"; }, 500);
-        window.removeEventListener("scroll", ocultarFlecha);
-    }
-});
 
-// --- CUENTA ATRÁS ---
-const fechaBoda = new Date("July 11, 2026 00:00:00").getTime();
-const contador = setInterval(function() {
-    const ahora = new Date().getTime();
-    const diferencia = fechaBoda - ahora;
-
-    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-
-    document.getElementById("contador").innerHTML =
-        dias + " días " + horas + "h " + minutos + "m " + segundos + "s ";
-
-    if (diferencia < 0) {
-        clearInterval(contador);
-        document.getElementById("contador").innerHTML = "¡Hoy es el gran día!";
-    }
-}, 1000);
-
-// --- ANIMACIONES SCROLL ---
-const secciones = document.querySelectorAll("section");
 window.addEventListener("scroll", () => {
-    secciones.forEach(sec => {
-        const posicion = sec.getBoundingClientRect().top;
-        if(posicion < window.innerHeight - 100){
-            sec.classList.add("visible");
-        }
-    });
-});
-</script>
-</body>
-</html>
-
-Get Outlook for iOS
- 
-Nerea Aizpuru
-Back Office Support
-Wind - Energy
-
- 
-	   
-  
-  
-
- 
-
- 
-(414) 731 9106
- 
-3550 W Canal St
-53208, Milwaukee, United States
-
-           
-  
-
- 
-
-
-This e-mail may contain reserved or confidential information intended exclusively for the addressee or the person in charge of distributing it. If by mistake you are not the addressee, please inform us at gdpr.ingeteam@ingeteam.com, without spreading, storing or copying its content. See our privacy policy here.
-
-
- 
-________________________________________
-From: Nerea Aizpuru (Ingeteam USA) <Nerea.Aizpuru@ingeteam.com>
-Sent: Thursday, February 19, 2026 4:41:46 PM
-To: Nerea Aizpuru (Ingeteam USA) <Nerea.Aizpuru@ingeteam.com>
-Subject: 
- 
-Restricted Information
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Iñaki y Nerea - 11 de Julio de 2026</title>
-
-<!-- Fuentes -->
-<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
-
-<style>
-/* --- ESTILO GENERAL --- */
-body {
-    margin: 0;
-    font-family: Georgia, serif;
-    background-color: #ffffff;
-    color: #000000;
-    text-align: center;
-}
-p { font-size: 1em; line-height: 1.8; font-weight: 400; }
-
-/* --- PANTALLA INICIAL (SOBRE REAL + FOTO) --- */
-#pantalla-inicial {
-    position: fixed;
-    inset: 0;
-    background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url("ronda-portada.jpg");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    color: white;
-    transition: opacity 1.2s ease;
-}
-
-/* --- SOBRE --- */
-.sobre {
-    width: 320px;
-    height: 200px;
-    background: linear-gradient(145deg, #f6f1e7, #e8dfc8);
-    position: relative;
-    box-shadow: 0 16px 35px rgba(0,0,0,0.35);
-    cursor: pointer;
-    margin-bottom: 40px;
-}
-
-/* --- SOLAPA --- */
-.solapa {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(145deg, #f0e8d5, #e1d5b8);
-    clip-path: polygon(0 0, 100% 0, 50% 60%);
-    transform-origin: top;
-    transition: transform 0.9s ease-in-out;
-    box-shadow: inset 0 -6px 10px rgba(0,0,0,0.25);
-}
-.sobre.abierto .solapa { transform: rotateX(180deg); }
-
-/* --- SELLO DE CERA --- */
-.sello-sobre {
-    position: absolute;
-    bottom: 22px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 62px;
-    height: 62px;
-    border-radius: 50%;
-    background: radial-gradient(circle at top left, #9b2d30, #6f1d1b);
-    box-shadow:
-        inset 2px 2px 6px rgba(255,255,255,0.25),
-        inset -4px -6px 10px rgba(0,0,0,0.45),
-        0 10px 18px rgba(0,0,0,0.45);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.sello-sobre span {
-    font-family: 'Cinzel', serif;
-    font-size: 1.1em;
-    letter-spacing: 2px;
-    color: #f3e6d0;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.4);
-}
-
-/* --- CONTENIDO SOBRE FOTO --- */
-.contenido-sobre {
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease;
-}
-.preliminar-frase {
-    font-size: 0.8em;
-    letter-spacing: 4px;
-    margin-bottom: 20px;
-    opacity: 0.85;
-}
-.nombres-pre {
-    font-family: 'Italianno', cursive;
-    font-size: 3.8em;
-    margin-bottom: 10px;
-}
-.fecha-pre { letter-spacing: 4px; margin-top: 10px; }
-.lugar-pre { letter-spacing: 3px; font-size: 0.9em; opacity: 0.9; margin-bottom: 30px; }
-
-/* --- BOTÓN EN SINTONÍA CON FOTO --- */
-.boton-foto {
-    border: 1.5px solid rgba(255,255,255,0.9);
-    color: white;
-    background: transparent;
-}
-.boton-foto:hover { background: rgba(255,255,255,0.2); }
-
-/* --- HEADER --- */
-header {
-    padding: 110px 20px 70px;
-    background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url("ronda.jpg");
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-header h1 { font-family: 'Italianno', cursive; font-size: 4.2em; letter-spacing: 2px; }
-.fecha-header { letter-spacing: 4px; margin-top: 10px; }
-.lugar-header { letter-spacing: 3px; font-size: 0.9em; margin-bottom: 25px; opacity: 0.85; }
-
-/* --- CUENTA ATRÁS --- */
-.cuenta-atras {
-    padding: 18px 36px;
-    border-radius: 50px;
-    border: 1px solid rgba(0,0,0,0.25);
-    background: rgba(255,255,255,0.75);
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 3px;
-    display: inline-block;
-}
-
-/* --- FOTOS --- */
-.fotos img { width: 260px; margin: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-
-/* --- SECCIONES --- */
-section { padding: 80px 20px; opacity: 0; transform: translateY(20px); transition: all 1s ease; background-color: #ffffff; }
-section.visible { opacity: 1; transform: translateY(0); }
-section h2 { font-family: 'Montserrat', sans-serif !important; font-size: 2.1em; font-style: italic; font-weight: 500; margin-bottom: 35px; }
-
-/* --- IMAGENES --- */
-.programa img, .ubicacion img { width: 85%; max-width: 600px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-
-/* --- FOOTER --- */
-footer { padding: 50px 20px; font-size: 0.9em; }
-
-/* --- FLECHA DESPLAZAR ABAJO --- */
-.flecha-scroll {
-    position: fixed;
-    left: 50%;
-    bottom: 30px;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: rgba(85,107,47,0.1);
-    display: none;
-    cursor: pointer;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    animation: bounce 1.5s infinite;
-    transition: opacity 0.8s ease;
-}
-.flecha-scroll svg { width: 30px; height: 30px; stroke: #000000; }
-@keyframes bounce { 0%,20%,50%,80%,100%{ transform: translateX(-50%) translateY(0);} 40%{ transform: translateX(-50%) translateY(10px);} 60%{ transform: translateX(-50%) translateY(5px);} }
-
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-    header h1, #pantalla-inicial h1, .nombres-pre { font-size: 2.5em; }
-    .fotos img, .programa img, .ubicacion img { width: 90%; }
-    .sello { width: 50px; height: 50px; font-size: 1em; }
-    .flecha-scroll svg { width: 25px; height: 25px; }
-}
-</style>
-</head>
-
-<body>
-
-<!-- PANTALLA DE ENTRADA -->
-<div id="pantalla-inicial">
-    <div class="sobre" onclick="abrirSobre()">
-        <div class="solapa"></div>
-        <div class="sello-sobre">
-            <span>I&nbsp;N</span>
-        </div>
-    </div>
-
-    <div class="contenido-sobre">
-        <p class="preliminar-frase">EL DÍA SE ACERCA</p>
-        <h1 class="nombres-pre">Iñaki y Nerea</h1>
-        <p class="fecha-pre">11 · JULIO · 2026</p>
-        <p class="lugar-pre">Ronda, Málaga</p>
-        <a href="#" class="boton boton-foto" onclick="abrirInvitacion()">Abrir invitación</a>
-    </div>
-</div>
-
-<header>
-    <h1>Iñaki y Nerea</h1>
-    <p class="fecha-header">11 · JULIO · 2026</p>
-    <p class="lugar-header">Ronda, Málaga</p>
-    <div class="cuenta-atras" id="contador"></div>
-    <div class="fotos">
-        <img src="foto1.jpg" alt="Foto pareja 1">
-    </div>
-</header>
-
-<!-- SECCIONES -->
-<section>
-    <h2>PROGRAMA</h2>
-    <div class="programa">
-        <img src="programa.PNG" alt="Programa boda">
-    </div>
-</section>
-
-<section>
-    <h2>CONFIRMA TU ASISTENCIA</h2>
-    <p>Nos encantaría contar contigo en nuestro día. Por favor, confirma tu asistencia antes del <strong>21 de Marzo de 2026</strong>.</p>
-    <a class="boton" href="https://docs.google.com/forms/d/e/1FAIpQLSfqXMHrm615boPe7YyzUk5AhUR8w9_5d807FafDdk79SJjrnA/viewform?usp=header" target="_blank">
-        Confirmar asistencia
-    </a>
-</section>
-
-<section>
-    <h2>UBICACIÓN</h2>
-    <p style="max-width:700px; margin:20px auto;">
-        Nos casamos en la preciosa ciudad de Ronda.
-    </p>
-    <div class="ubicacion">
-        <img src="ronda.jpg" alt="Iglesia y finca">
-    </div>
-    <div style="max-width:900px; margin:auto; margin-top:30px;">
-        <h3 class="titulo-lugar"><span>✝</span> Ceremonia</h3>
-        <p>Iglesia de Padre Jesús<br>C/ Real, 13<br>Ronda, Málaga</p>
-        <iframe src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="300" style="border:0; border-radius:10px; margin-bottom:30px;" loading="lazy"></iframe>
-
-        <h3 class="titulo-lugar"><span>✧</span> Celebración</h3>
-        <p>Heredad Los Alba<br>Carretera Algeciras, Ronda</p>
-        <iframe src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" width="100%" height="300" style="border:0; border-radius:10px;" loading="lazy"></iframe>
-    </div>
-</section>
-
-<section>
-    <h2>REGALO</h2>
-    <p style="max-width:700px; margin:20px auto; line-height:1.8;">
-        Vuestra compañía será nuestro mayor regalo, pero si deseáis tener un detalle con nosotros, podéis ayudarnos a comenzar esta nueva etapa.
-    </p>
-    <div style="margin-top:30px; padding:25px; background:white; max-width:500px; margin-left:auto; margin-right:auto; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
-        <p><strong>Cuenta bancaria</strong></p>
-        <p>ES00 0000 0000 0000 0000 0000</p>
-        <p style="font-size:0.8em; color:#555;">¡Gracias!</p>
-    </div>
-</section>
-
-<footer>
-    Con mucho cariño, os esperamos
-</footer>
-
-<!-- FLECHA DESLIZAR ABAJO -->
-<div class="flecha-scroll" id="flecha" onclick="scrollAbajo()">
-    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="12" y1="5" x2="12" y2="19"></line>
-        <polyline points="19 12 12 19 5 12"></polyline>
-    </svg>
-</div>
-
-<script>
-// --- APERTURA DEL SOBRE ---
-function abrirSobre() {
-    const sobre = document.querySelector('.sobre');
-    sobre.classList.add('abierto');
-
-    setTimeout(() => {
-        const contenido = document.querySelector('.contenido-sobre');
-        contenido.style.opacity = '1';
-        contenido.style.transform = 'translateY(0)';
-    }, 700);
-}
-
-// --- ABRIR INVITACIÓN ---
-function abrirInvitacion() {
-    const pantalla = document.getElementById("pantalla-inicial");
-    pantalla.style.opacity = "0";
-    setTimeout(() => {
-        pantalla.style.display = "none";
-        mostrarFlecha();
-    }, 1200);
-}
-
-// --- MOSTRAR FLECHA ---
-function mostrarFlecha(){
-    const flecha = document.getElementById("flecha");
-    flecha.style.display = "flex";
-    setTimeout(() => { flecha.style.opacity = "1"; }, 50);
-}
-
-// --- SCROLL ABAJO ---
-function scrollAbajo(){
-    const primeraSeccion = document.querySelector("section");
-    primeraSeccion.scrollIntoView({behavior: "smooth"});
-}
-
-// --- OCULTAR FLECHA AL LLEGAR A SECCIÓN ---
-const flecha = document.getElementById("flecha");
-const primeraSeccion = document.querySelector("section");
-window.addEventListener("scroll", function ocultarFlecha(){
     const posicionSeccion = primeraSeccion.getBoundingClientRect().top;
+
     if(posicionSeccion <= window.innerHeight / 2){
         flecha.style.opacity = "0";
         setTimeout(() => { flecha.style.display = "none"; }, 500);
-        window.removeEventListener("scroll", ocultarFlecha);
+    } else {
+        if(flecha.style.display === "none"){
+            flecha.style.display = "flex";
+            setTimeout(() => { flecha.style.opacity = "1"; }, 50);
+        }
     }
 });
 
 // --- CUENTA ATRÁS ---
-const fechaBoda = new Date("July 11, 2026 00:00:00").getTime();
+const fechaBoda = new Date(2026, 6, 11, 0, 0, 0).getTime();
 const contador = setInterval(function() {
     const ahora = new Date().getTime();
     const diferencia = fechaBoda - ahora;
+
+    if(diferencia <= 0){
+        clearInterval(contador);
+        document.getElementById("contador").innerHTML = "¡Hoy es el gran día!";
+        return;
+    }
 
     const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
     const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -675,11 +296,6 @@ const contador = setInterval(function() {
 
     document.getElementById("contador").innerHTML =
         dias + " días " + horas + "h " + minutos + "m " + segundos + "s ";
-
-    if (diferencia < 0) {
-        clearInterval(contador);
-        document.getElementById("contador").innerHTML = "¡Hoy es el gran día!";
-    }
 }, 1000);
 
 // --- ANIMACIONES SCROLL ---
