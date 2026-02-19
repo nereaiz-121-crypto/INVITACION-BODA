@@ -3,666 +3,372 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nerea & Iñaki - 11 de JULIO de 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@400;500;600&display=swap" rel="stylesheet">
+<title>Iñaki y Nerea - 11 de Julio de 2026</title>
+
+<!-- Cargar fuentes -->
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-
-/* --- FONDO TEXTURA PAPEL --- */
-
+/* --- ESTILO GENERAL --- */
 body {
-
     margin: 0;
-
-    font-family: 'Playfair Display', serif;
-
-    color: #3b3b3b;
-
+    font-family: Georgia, serif;
+    background-color: #ffffff;
+    color: #000000;
     text-align: center;
-
-    background-color: #f5f1e8;
-
-    background-image: 
-
-        radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-
-        radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
-
-    background-size: 4px 4px, 6px 6px;
-
-    background-position: 0 0, 2px 2px;
-
-    padding: 20px;
-
 }
 
-/* --- PANTALLA INICIAL --- */
-
-#pantalla-inicial {
-
-    position:fixed;
-
-    width:100%;
-
-    height:100vh;
-
-    background:#f5f1e8;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    flex-direction:column;
-
-    z-index:9999;
-
-    transition:opacity 1.2s ease;
-
-    box-sizing: border-box;
-
-}
-
-.nombres-portada {
-
-    font-family: 'Great Vibes', cursive;
-
-    font-size: 4em;
-
-    color: #8c6b3f;
-
-    margin-bottom: 10px;
-
-}
-
-#pantalla-inicial p {
-
-    letter-spacing:3px;
-
-    margin-bottom:30px;
-
-}
-
-#pantalla-inicial button {
-
-    padding:14px 35px;
-
-    border:1px solid #8c6b3f;
-
-    background:transparent;
-
-    color:#8c6b3f;
-
-    font-size:0.9em;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-    cursor:pointer;
-
-    transition:all 0.3s ease;
-
-}
-
-#pantalla-inicial button:hover {
-
-    background:#8c6b3f;
-
-    color:white
- 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nerea & Iñaki - 11 de JULIO de 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-
-/* --- FONDO TEXTURA PAPEL --- */
-
-body {
-
-    margin: 0;
-
-    font-family: 'Playfair Display', serif;
-
-    color: #3b3b3b;
-
-    text-align: center;
-
-    background-color: #f5f1e8;
-
-    background-image: 
-
-        radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-
-        radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
-
-    background-size: 4px 4px, 6px 6px;
-
-    background-position: 0 0, 2px 2px;
-
-    padding: 20px;
-
-}
-
-/* --- PANTALLA INICIAL --- */
-
-#pantalla-inicial {
-
-    position:fixed;
-
-    width:100%;
-
-    height:100vh;
-
-    background:#f5f1e8;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    flex-direction:column;
-
-    z-index:9999;
-
-    transition:opacity 1.2s ease;
-
-    box-sizing: border-box;
-
-}
-
-.nombres-portada {
-
-    font-family: 'Great Vibes', cursive;
-
-    font-size: 4em;
-
-    color: #8c6b3f;
-
-    margin-bottom: 10px;
-
-}
-
-#pantalla-inicial p {
-
-    letter-spacing:3px;
-
-    margin-bottom:30px;
-
-}
-
-#pantalla-inicial button {
-
-    padding:14px 35px;
-
-    border:1px solid #8c6b3f;
-
-    background:transparent;
-
-    color:#8c6b3f;
-
-    font-size:0.9em;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-    cursor:pointer;
-
-    transition:all 0.3s ease;
-
-}
-
-#pantalla-inicial button:hover {
-
-    background:#8c6b3f;
-
-    color:white;
-
-}
-
-/* --- HEADER --- */
-
-header {
-
-    padding: 120px 20px 80px;
-
-    background: linear-gradient(rgba(245,241,232,0.95), rgba(245,241,232,0.95)),
-
-                url("ronda.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-    border-radius: 20px;
-
-    max-width: 900px;
-
-    margin: 40px auto;
-
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-
-}
-
-/* --- MONOGRAMA --- */
-
-.monograma {
-
-    width: 120px;
-
-    height: 120px;
-
-    border-radius: 50%;
-
-    margin: 0 auto 40px auto;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    position:relative;
-
-    background: radial-gradient(circle at 30% 30%, #fff9f0, #f5f1e8);
-
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.1);
-
-}
-
-.monograma span {
-
-    font-family: 'Great Vibes', cursive;
-
-    font-size: 2.5em;
-
-    background: linear-gradient(45deg, #d4af37, #ffd700, #b8860b);
-
-    -webkit-background-clip: text;
-
-    -webkit-text-fill-color: transparent;
-
-    font-weight: 700;
-
-    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-
-}
-
-/* --- TITULO --- */
-
-h1 {
-
-    font-family: 'Great Vibes', cursive;
-
-    font-size: 3.5em;
-
-    color:#8c6b3f;
-
-    margin-bottom: 10px;
-
-}
-
-.fecha {
-
+p {
     font-size: 1em;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 30px;
-
-    text-transform: uppercase;
-
+    line-height: 1.8;
+    font-weight: 400;
 }
 
-/* --- MINI CARRUSEL --- */
-
-.mini-carrusel {
-
-    position: relative;
-
-    width: 280px;
-
-    height: 380px;
-
-    margin: 40px auto;
-
-    border-radius: 12px;
-
-    overflow: hidden;
-
-    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-
-}
-
-.mini-carrusel img {
-
-    position: absolute;
-
+/* --- PANTALLA DE ENTRADA --- */
+#pantalla-inicial {
+    position: fixed;
     width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    text-align: center;
+    transition: opacity 1.2s ease;
+    color: #000000;
+}
 
-    height: 100%;
+/* --- ANIMACIÓN FADE + ZOOM --- */
+@keyframes fadeZoom {
+    0% { opacity: 0; transform: scale(0.6); }
+    100% { opacity: 1; transform: scale(1); }
+}
 
-    object-fit: cover;
-
+#pantalla-inicial h1,
+header h1 {
+    font-family: 'Kaushan Script', cursive;
+    font-weight: normal;
+    white-space: nowrap;
+    display: inline-block;
     opacity: 0;
-
-    transition: opacity 1.5s ease;
-
+    transform: scale(0.6);
+    animation: fadeZoom 1.8s ease forwards;
 }
-
-.mini-carrusel img.activa {
-
-    opacity: 1;
-
-}
-
-.cuenta-atras {
-
-    font-size: 1.1em;
-
-    margin-top: 30px;
-
-}
-
-/* --- SECCIONES --- */
-
-section {
-
-    padding: 80px 20px;
-
+    font-weight: normal;
+    white-space: nowrap;
+    display: inline-block;
     opacity: 0;
-
-    transform: translateY(20px);
-
-    transition: all 1s ease;
-
-    max-width: 900px;
-
-    margin: 40px auto;
-
-    background: #f8f6f2;
-
-    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-
-    position: relative;
-
-    border-radius: 20px;
-
+    transform: scale(0.6);
+    animation: fadeZoom 1.8s ease forwards;
 }
+#pantalla-inicial h1 { font-size: 3rem; margin-bottom: 15px; }
+header h1 { font-size: 3.2em; font-style: italic; letter-spacing: 1px; }
 
-/* Bordes florales negros */
-
-section::before, section::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 100%;
-
-    height: 100%;
-
-    pointer-events: none;
-
-    top: 0;
-
-    left: 0;
-
-    border: 2px solid black;
-
-    border-radius: 20px;
-
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-
-}
-
-/* Títulos dorados cursiva */
-
-h2 {
-
-    font-family: 'Great Vibes', cursive;
-
-    font-size: 1.8em;
-
-    margin-bottom: 30px;
-
-    letter-spacing: 1px;
-
-    color: #d4af37;
-
-    font-style: italic;
-
-}
-
-section.visible {
-
-    opacity: 1;
-
-    transform: translateY(0);
-
-}
-
-/* --- BOTÓN ELEGANTE --- */
-
+/* --- BOTONES PERSONALIZADOS --- */
 .boton {
-
-    display:inline-block;
-
-    margin-top:20px;
-
-    padding:14px 40px;
-
-    border:1px solid #8c6b3f;
-
-    color:#8c6b3f;
-
-    text-decoration:none;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-    font-size:0.8em;
-
-    transition:all 0.3s ease;
-
-    border-radius: 8px;
-
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 35px;
+    min-width: 220px;              
+    border: 1.5px solid #000000;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    font-size: 0.95em;
+    text-align: center;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
 }
 
 .boton:hover {
-
-    background:#8c6b3f;
-
-    color:white;
-
+    background-color: #DCDCDC;
+    color: #ffffff;
 }
 
-/* --- CAJA CUENTA --- */
-
-.cuenta-box {
-
-    margin-top:30px;
-
-    padding:30px;
-
-    background:white;
-
-    max-width:500px;
-
-    margin-left:auto;
-
-    margin-right:auto;
-
-    border-radius:12px;
-
-    box-shadow:0 4px 12px rgba(0,0,0,0.05);
-
+/* --- ELIMINAR DESTELLO AZUL DEL BOTÓN DE ENTRAR --- */
+#pantalla-inicial .boton:focus,
+#pantalla-inicial .boton:active {
+    outline: none;
+    box-shadow: none;
+    background-color: #DCDCDC;
+    color: #ffffff;
+    transform: scale(0.97);
+    transition: all 0.2s ease;
 }
 
-footer {
-
-    padding: 40px 20px;
-
-    font-size: 0.9em;
-
+/* --- HEADER --- */
+header {
+    padding: 110px 20px 70px;
+    background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
+                url("ronda.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
+/* --- SELLO INICIALES --- */
+.sello {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    border: 1.5px solid #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 1.6em;
+    color: #000000;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.sello::before {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    border: 1px solid #000000;
+    border-radius: 50%;
+}
+
+/* --- CUENTA ATRÁS --- */
+.cuenta-atras {
+    font-size: 1.15em;
+    font-weight: 300;
+    margin-top: 15px;
+    letter-spacing: 1px;
+}
+
+/* --- FOTOS --- */
+.fotos img { width: 260px; margin: 20px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+/* --- SECCIONES --- */
+section {
+    padding: 80px 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+    background-color: #ffffff;
+}
+
+section.visible { opacity: 1; transform: translateY(0); }
+
+/* --- TITULOS DE SECCIÓN (FORZAR MONTSERRAT) --- */
+section h2 { 
+    font-family: 'Montserrat', sans-serif !important; 
+    font-size: 2.1em; 
+    font-style: italic; 
+    font-weight: 500; 
+    margin-bottom: 35px; 
+}
+
+/* --- IMAGENES --- */
+.programa img, .ubicacion img {
+    width: 85%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* --- FOOTER --- */
+footer { padding: 50px 20px; font-size: 0.9em; }
+
+/* --- FLECHA DESPLAZAR ABAJO CENTRAL --- */
+.flecha-scroll {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(85,107,47,0.1);
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: bounce 1.5s infinite;
+    transition: opacity 0.8s ease;
+}
+
+.flecha-scroll svg { width: 30px; height: 30px; stroke: #000000; }
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(10px); }
+    60% { transform: translateX(-50%) translateY(5px); }
+}
+
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-
-    h1 { font-size: 2.5em; }
-
-    .nombres-portada { font-size: 3em; }
-
-    .mini-carrusel {
-
-        width: 220px;
-
-        height: 300px;
-
-    }
-
+    header h1, #pantalla-inicial h1 { font-size: 2.4em; }
+    .fotos img, .programa img, .ubicacion img { width: 90%; }
+    .sello { width: 50px; height: 50px; font-size: 1em; }
+    .flecha-scroll svg { width: 25px; height: 25px; }
 }
 </style>
 </head>
+
 <body>
+
+<!-- PANTALLA DE ENTRADA -->
 <div id="pantalla-inicial">
-<div class="nombres-portada">Nerea & Iñaki</div>
-<p>11 DE JULIO DE 2026 · RONDA</p>
-<button onclick="abrirInvitacion()">Abrir invitación</button>
+    <h1>Iñaki y Nerea</h1>
+    <p style="letter-spacing:3px; margin-bottom:10px;">¡Nuestro día especial está por llegar!</p>
+    <p style="letter-spacing:3px; margin-bottom:30px;">11 de Julio de 2026</p>
+    <a href="#" class="boton" onclick="abrirInvitacion()">Entrar a la invitación</a>
 </div>
+
 <header>
-<div class="monograma">
-<span>N & I</span>
-</div>
-<h1>Nerea & Iñaki</h1>
-<div class="fecha">11 DE JULIO DE 2026</div>
-<div class="mini-carrusel">
-<img src="foto1.jpg" class="activa">
-<img src="foto2.jpg">
-<img src="foto3.jpg">
-</div>
-<div class="cuenta-atras" id="contador"></div>
+    <div class="sello">I y N</div>
+    <h1>Iñaki y Nerea</h1>
+    <div class="cuenta-atras" id="contador"></div>
+    <div class="fotos">
+        <img src="foto1.jpg" alt="Foto pareja 1">
+    </div>
 </header>
-<section>
-<h2>Programa del día</h2>
-<img src="programa.PNG" style="width:85%;max-width:600px;">
-</section>
-<section>
-<h2>Confirmación de asistencia</h2>
-<p>Por favor, confirma tu asistencia antes del <strong>21 de marzo de 2026</strong>.</p>
-<a class="boton" href="https://docs.google.com/forms/d/e/1FAIpQLSfqXMHrm615boPe7YyzUk5AhUR8w9_5d807FafDdk79SJjrnA/viewform?usp=header" target="_blank">
 
+<!-- SECCIONES -->
+<section>
+    <h2>PROGRAMA</h2>
+    <div class="programa">
+        <img src="programa.PNG" alt="Programa boda">
+    </div>
+</section>
+
+<section>
+    <h2>ASISTENCIA</h2>
+    <p>Nos encantaría contar contigo en nuestro día. Por favor, confirma tu asistencia antes del <strong>21 de Marzo de 2026</strong>.</p>
+    <a class="boton" href="https://docs.google.com/forms/d/e/1FAIpQLSfqXMHrm615boPe7YyzUk5AhUR8w9_5d807FafDdk79SJjrnA/viewform?usp=header" target="_blank">
         Confirmar asistencia
-</a>
-<p style="margin-top:25px; font-style:italic;">Será un placer compartir este día contigo</p>
+    </a>
 </section>
-<section>
-<h2>Ubicación</h2>
-<p>Nos casamos en la preciosa ciudad de Ronda</p>
-<div style="max-width:900px; margin:auto; margin-top:30px;">
-<h3 style="font-family: 'Great Vibes', cursive; font-style:italic;">⛪ Ceremonia</h3>
-<p>Iglesia de Padre Jesús<br>Ronda, Málaga</p>
-<iframe src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="300" style="border:0; border-radius:10px; margin-bottom:30px;" loading="lazy"></iframe>
-<h3 style="font-family: 'Great Vibes', cursive; font-style:italic;">🌿 Celebración</h3>
-<p>Heredad Los Alba<br>Carretera Algeciras, Ronda</p>
-<iframe src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" width="100%" height="300" style="border:0; border-radius:10px;" loading="lazy"></iframe>
-</div>
-</section>
-<section>
-<h2>Regalo</h2>
-<p>Si deseáis tener un detalle con nosotros, podéis ayudarnos a comenzar esta nueva etapa.</p>
-<div class="cuenta-box">
-<p><strong>Cuenta bancaria</strong></p>
-<p>ES00 0000 0000 0000 0000 0000</p>
-</div>
-</section>
-<footer>
 
+<section>
+    <h2>UBICACIÓN</h2>
+    <p style="max-width:700px; margin:20px auto;">
+        Nos casamos en la preciosa ciudad de Ronda.
+    </p>
+    <div class="ubicacion">
+        <img src="ronda.jpg" alt="Iglesia y finca">
+    </div>
+    <div style="max-width:900px; margin:auto; margin-top:30px;">
+        <h3 style="font-family: 'Playfair Display', serif; font-style:italic;">Ceremonia</h3>
+        <p>Iglesia de Padre Jesús<br>C/ Real, 13<br>Ronda, Málaga</p>
+        <iframe src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="300" style="border:0; border-radius:10px; margin-bottom:30px;" loading="lazy"></iframe>
+
+        <h3 style="font-family: 'Playfair Display', serif; font-style:italic;">Celebración</h3>
+        <p>Heredad Los Alba<br>Carretera Algeciras, Ronda</p>
+        <iframe src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" width="100%" height="300" style="border:0; border-radius:10px;" loading="lazy"></iframe>
+    </div>
+</section>
+
+<section>
+    <h2>REGALO</h2>
+    <p style="max-width:700px; margin:20px auto; line-height:1.8;">
+        Vuestra compañía será nuestro mayor regalo, pero si deseáis tener un detalle con nosotros, podéis ayudarnos a comenzar esta nueva etapa.
+    </p>
+    <div style="margin-top:30px; padding:25px; background:white; max-width:500px; margin-left:auto; margin-right:auto; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+        <p><strong>Cuenta bancaria</strong></p>
+        <p>ES00 0000 0000 0000 0000 0000</p>
+        <p style="font-size:0.8em; color:#555;">
+            ¡Gracias por ayudarnos a hacer realidad nuestros sueños!
+        </p>
+    </div>
+</section>
+
+<footer>
     Con mucho cariño, os esperamos
 </footer>
+
+<!-- FLECHA DESLIZAR ABAJO -->
+<div class="flecha-scroll" id="flecha" onclick="scrollAbajo()">
+    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <polyline points="19 12 12 19 5 12"></polyline>
+    </svg>
+</div>
+
 <script>
-
+// --- PANTALLA DE ENTRADA ---
 function abrirInvitacion(){
-
     document.getElementById("pantalla-inicial").style.opacity = "0";
-
     setTimeout(function(){
-
         document.getElementById("pantalla-inicial").style.display = "none";
-
+        mostrarFlecha();
     },1200);
-
 }
 
-const imagenes = document.querySelectorAll(".mini-carrusel img");
+// --- MOSTRAR FLECHA ---
+function mostrarFlecha(){
+    const flecha = document.getElementById("flecha");
+    flecha.style.display = "flex";
+    setTimeout(() => { flecha.style.opacity = "1"; }, 50);
+}
 
-let indice = 0;
+// --- SCROLL ABAJO ---
+function scrollAbajo(){
+    const primeraSeccion = document.querySelector("section");
+    primeraSeccion.scrollIntoView({behavior: "smooth"});
+}
 
-setInterval(() => {
+// --- OCULTAR FLECHA AL LLEGAR A SECCIÓN ---
+const flecha = document.getElementById("flecha");
+const primeraSeccion = document.querySelector("section");
+window.addEventListener("scroll", function ocultarFlecha(){
+    const posicionSeccion = primeraSeccion.getBoundingClientRect().top;
+    if(posicionSeccion <= window.innerHeight / 2){
+        flecha.style.opacity = "0";
+        setTimeout(() => { flecha.style.display = "none"; }, 500);
+        window.removeEventListener("scroll", ocultarFlecha);
+    }
+});
 
-    imagenes[indice].classList.remove("activa");
-
-    indice = (indice + 1) % imagenes.length;
-
-    imagenes[indice].classList.add("activa");
-
-}, 4000);
-
+// --- CUENTA ATRÁS ---
 const fechaBoda = new Date("July 11, 2026 00:00:00").getTime();
-
 const contador = setInterval(function() {
-
     const ahora = new Date().getTime();
-
     const diferencia = fechaBoda - ahora;
 
     const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-
     const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
     const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-
     const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
     document.getElementById("contador").innerHTML =
-
         dias + " días " + horas + "h " + minutos + "m " + segundos + "s ";
 
     if (diferencia < 0) {
-
         clearInterval(contador);
-
         document.getElementById("contador").innerHTML = "¡Hoy es el gran día!";
-
     }
-
 }, 1000);
 
+// --- ANIMACIONES SCROLL ---
 const secciones = document.querySelectorAll("section");
-
 window.addEventListener("scroll", () => {
-
     secciones.forEach(sec => {
-
         const posicion = sec.getBoundingClientRect().top;
-
         if(posicion < window.innerHeight - 100){
-
             sec.classList.add("visible");
-
         }
-
     });
-
 });
 </script>
+
 </body>
-</html>
- 
+        </html>
