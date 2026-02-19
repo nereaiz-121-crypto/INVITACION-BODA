@@ -11,7 +11,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
 
 <style>
-/* --- ESTILO GENERAL --- */
 body {
     margin: 0;
     font-family: Georgia, serif;
@@ -37,30 +36,23 @@ p { font-size: 1em; line-height: 1.8; font-weight: 400; }
     transition: opacity 1.2s ease;
 }
 
+/* Texto arriba */
 #pantalla-inicial .preliminar-frase {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
     font-size: 1em;
     letter-spacing: 3px;
-    margin-bottom: 15px;
     opacity: 0.85;
 }
 
-#pantalla-inicial .nombres-pre {
-    font-family: 'Italianno', cursive;
-    font-size: 3em;
-    margin-bottom: 10px;
-}
-
-#pantalla-inicial .fecha-pre,
-#pantalla-inicial .lugar-pre {
-    letter-spacing: 2px;
-    font-size: 1em;
-    margin-bottom: 10px;
-    opacity: 0.9;
-}
-
+/* Botón centrado con animación */
 #pantalla-inicial .boton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     display: inline-block;
-    margin-top: 20px;
     padding: 16px 40px;
     width: 70%;
     max-width: 250px;
@@ -74,19 +66,30 @@ p { font-size: 1em; line-height: 1.8; font-weight: 400; }
     cursor: pointer;
     background-color: transparent;
     transition: all 0.2s ease;
+    animation: vibrar 2s infinite;
 }
 #pantalla-inicial .boton:hover {
     background-color: rgba(255,255,255,0.2);
 }
 
+/* --- ANIMACIÓN BOTÓN --- */
+@keyframes vibrar {
+    0% { transform: translateY(-50%) scale(1); }
+    25% { transform: translateY(-50%) scale(1.05); }
+    50% { transform: translateY(-50%) scale(1); }
+    75% { transform: translateY(-50%) scale(1.05); }
+    100% { transform: translateY(-50%) scale(1); }
+}
+
 /* --- HEADER --- */
 header {
-    padding: 100px 20px 50px;
+    padding: 80px 20px 40px;
     background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url("ronda.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
     text-align: center;
+    display: none; /* Oculto hasta abrir invitación */
 }
 header h1 { font-family: 'Italianno', cursive; font-size: 3em; letter-spacing: 1.5px; }
 .fecha-header { letter-spacing: 2px; margin-top: 10px; }
@@ -115,9 +118,6 @@ section h2 { font-family: 'Montserrat', sans-serif !important; font-size: 1.8em;
 /* --- IMAGENES --- */
 .programa img, .ubicacion img { width: 90%; max-width: 500px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin:auto; display:block; }
 
-/* --- BOTONES SECCIONES ---
-section .boton { width: 80%; max-width: 250px; padding: 14px 35px; font-size:1em; } */
-
 /* --- FOOTER --- */
 footer { padding: 40px 15px; font-size: 0.9em; }
 
@@ -145,7 +145,6 @@ footer { padding: 40px 15px; font-size: 0.9em; }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 480px) {
-    #pantalla-inicial .nombres-pre { font-size: 2.5em; }
     header h1 { font-size: 2.2em; }
     .cuenta-atras { font-size: 0.8em; padding: 10px 20px; }
     .fotos img, .programa img, .ubicacion img { max-width: 90%; }
@@ -156,16 +155,14 @@ footer { padding: 40px 15px; font-size: 0.9em; }
 
 <body>
 
-<!-- PANTALLA INICIAL SIMPLE -->
+<!-- PANTALLA INICIAL -->
 <div id="pantalla-inicial">
     <p class="preliminar-frase">EL DÍA SE ACERCA</p>
-    <h1 class="nombres-pre">Iñaki y Nerea</h1>
-    <p class="fecha-pre">11 · JULIO · 2026</p>
-    <p class="lugar-pre">Ronda, Málaga</p>
     <a href="#" class="boton" onclick="abrirInvitacion(event)">Abrir invitación</a>
 </div>
 
-<header>
+<!-- HEADER y contenido -->
+<header id="contenido-invitacion">
     <h1>Iñaki y Nerea</h1>
     <p class="fecha-header">11 · JULIO · 2026</p>
     <p class="lugar-header">Ronda, Málaga</p>
@@ -204,7 +201,7 @@ footer { padding: 40px 15px; font-size: 0.9em; }
         <p>Iglesia de Padre Jesús<br>C/ Real, 13<br>Ronda, Málaga</p>
         <iframe src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-bottom:20px;" loading="lazy"></iframe>
 
-        <h3><span>✧</span> Celebración</h3>
+        <h3><span>✧</span> Celebración 🍃</h3>
         <p>Heredad Los Alba<br>Carretera Algeciras, Ronda</p>
         <iframe src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px;" loading="lazy"></iframe>
     </div>
@@ -242,6 +239,7 @@ function abrirInvitacion(event){
     pantalla.style.opacity = "0";
     setTimeout(() => {
         pantalla.style.display = "none";
+        document.getElementById("contenido-invitacion").style.display = "block"; // Mostrar contenido
         mostrarFlecha();
     }, 1200);
 }
@@ -262,10 +260,8 @@ function scrollAbajo(){
 // --- FLECHA DINÁMICA SEGÚN SCROLL ---
 const flecha = document.getElementById("flecha");
 const primeraSeccion = document.querySelector("section");
-
 window.addEventListener("scroll", () => {
     const posicionSeccion = primeraSeccion.getBoundingClientRect().top;
-
     if(posicionSeccion <= window.innerHeight / 2){
         flecha.style.opacity = "0";
         setTimeout(() => { flecha.style.display = "none"; }, 500);
@@ -282,18 +278,15 @@ const fechaBoda = new Date(2026, 6, 11, 0, 0, 0).getTime();
 const contador = setInterval(function() {
     const ahora = new Date().getTime();
     const diferencia = fechaBoda - ahora;
-
     if(diferencia <= 0){
         clearInterval(contador);
         document.getElementById("contador").innerHTML = "¡Hoy es el gran día!";
         return;
     }
-
     const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
     const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
     const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-
     document.getElementById("contador").innerHTML =
         dias + " días " + horas + "h " + minutos + "m " + segundos + "s ";
 }, 1000);
@@ -309,5 +302,6 @@ window.addEventListener("scroll", () => {
     });
 });
 </script>
+
 </body>
 </html>
