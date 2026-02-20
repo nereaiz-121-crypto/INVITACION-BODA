@@ -28,7 +28,8 @@ p{margin:5px;}
     display:flex;
     flex-direction:column;
     align-items:center;
-    justify-content:center;
+    justify-content:flex-start; /* inicio superior */
+    padding-top:40px;
     z-index:9999;
     transition:opacity 1s;
     text-align:center;
@@ -40,9 +41,9 @@ p{margin:5px;}
     font-size:1.2em;
 }
 
-/* Botón abrir invitación transparente */
+/* Botón abrir invitación transparente con efecto vibrante */
 .boton-inicial{
-    margin-top:25px;
+    margin-top:50vh;
     padding:12px 25px;
     border-radius:30px;
     border:1px solid #fff;
@@ -54,6 +55,13 @@ p{margin:5px;}
     align-items:center;
     justify-content:center;
     transition:0.3s;
+    animation:vibrar 1s infinite;
+}
+@keyframes vibrar{
+    0%,100%{transform:translateY(0);}
+    25%{transform:translateY(-3px);}
+    50%{transform:translateY(2px);}
+    75%{transform:translateY(-2px);}
 }
 .boton-inicial:hover{
     background:#fff;
@@ -177,8 +185,8 @@ h2{
 /* RESPONSIVE Y CENTRADO VERTICAL */
 @media(max-width:480px){
     #pantalla-inicial{
-        justify-content:center;
-        padding-top:0;
+        justify-content:flex-start;
+        padding-top:20px;
     }
 
     #invitation{
@@ -213,12 +221,29 @@ h2{
 
     .boton-inicial{
         padding:12px 20px;
-        margin-top:25px;
+        margin-top:40vh;
         font-size:1em;
     }
 
     h2{font-size:1.3em;}
     .caja{min-width:50px;padding:10px 5px;}
+}
+
+/* UBICACIÓN CENTRADA */
+.ubicacion-img, .ceremonia, .celebracion{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+/* REGALO - IBAN */
+.iban{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:400;
+    color:#000;
+    text-decoration:none;
+    font-size:1em;
 }
 </style>
 </head>
@@ -243,90 +268,63 @@ h2{
     <img id="foto-invitacion" src="foto1.jpg" alt="Foto invitación">
 </section>
 
-<!-- PROGRAMA -->
+<!-- SECCIONES: PROGRAMA, CONFIRMA, UBICACIÓN, PLANES, CONTACTO, REGALO -->
 <section>
     <h2>PROGRAMA</h2>
     <p>Os compartimos cómo será nuestro día para que podáis organizaros mejor.</p>
     <img src="programa.PNG" alt="Programa boda" style="max-width:90%; margin-top:20px; border-radius:10px;">
 </section>
 
-<!-- CONFIRMA TU ASISTENCIA -->
 <section>
     <h2>CONFIRMA TU ASISTENCIA</h2>
     <p>Nos encantaría contar contigo en nuestro día. Por favor, confirma tu asistencia antes del <strong>21 de Marzo de 2026</strong>.</p>
-    <a class="boton" href="https://docs.google.com/forms/d/e/1FAIpQLSfqXMHrm615boPe7YyzUk5AhUR8w9_5d807FafDdk79SJjrnA/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">CONFIRMAR ASISTENCIA</a>
+    <a class="boton" href="https://docs.google.com/forms/d/e/1FAIpQLSfqXMHrm615boPe7YyzUk5AhUR8w9_5d807FafDdk79SJjrnA/viewform?usp=sf_link" target="_blank">CONFIRMAR ASISTENCIA</a>
 </section>
 
-<!-- UBICACIÓN -->
 <section>
-  <h2>UBICACIÓN</h2>
-  <p style="max-width:700px;margin:20px auto;">Nos casamos en la preciosa ciudad de Ronda.</p>
-  <div style="max-width:900px;margin:auto;margin-top:20px; text-align:left;">
-      <img src="ronda.jpg" alt="Ronda" style="max-width:90%; margin-top:15px; border-radius:10px;">
-     
-    <h3>Ceremonia</h3>
-    <p>Iglesia de Padre Jesús<br>C/ Real, 13<br>Ronda, Málaga</p>
-    <iframe src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-top:10px;" loading="lazy"></iframe>
-
-    <h3>Celebración</h3>
-    <p>Heredad Los Alba<br>Carretera Algeciras, Ronda</p>
-    <iframe src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-top:10px;" loading="lazy"></iframe>
-  </div>
+    <h2>UBICACIÓN</h2>
+    <p style="max-width:700px;margin:20px auto;">Nos casamos en la preciosa ciudad de Ronda.</p>
+    <div class="ubicacion-img">
+        <img src="ronda.jpg" alt="Ronda" style="max-width:90%; margin-top:15px; border-radius:10px;">
+        <div class="ceremonia">
+            <h3>Ceremonia</h3>
+            <p>Iglesia de Padre Jesús<br>C/ Real, 13<br>Ronda, Málaga</p>
+            <iframe src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-top:10px;" loading="lazy"></iframe>
+        </div>
+        <div class="celebracion" style="margin-top:15px;">
+            <h3>Celebración</h3>
+            <p>Heredad Los Alba<br>Carretera Algeciras, Ronda</p>
+            <iframe src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-top:10px;" loading="lazy"></iframe>
+        </div>
+    </div>
 </section>
 
-<!-- PLANES IMPRESCINDIBLES -->
 <section>
-<h2>PLANES IMPRESCINDIBLES EN RONDA</h2>
-<p>No te pierdas estos lugares y experiencias:</p>
-<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:20px;">
-  <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
-    <p><strong>Puente Nuevo</strong></p>
-    <p>El icono más famoso de Ronda, perfecto para fotos impresionantes.</p>
-    <a href="https://www.google.com/maps?q=Puente+Nuevo+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
-  </div>
-  <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
-    <p><strong>Plaza de Toros</strong></p>
-    <p>Una de las plazas más antiguas de España, con mucho encanto histórico.</p>
-    <a href="https://www.google.com/maps?q=Plaza+de+Toros+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
-  </div>
-  <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
-    <p><strong>Alameda de Ronda</strong></p>
-    <p>Un parque ideal para pasear y disfrutar de vistas de la ciudad y el Tajo.</p>
-    <a href="https://www.google.com/maps?q=Alameda+de+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
-  </div>
-  <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
-    <p><strong>Bar El Lechuguita</strong></p>
-    <p>Uno de los bares más auténticos de Ronda, ideal para tapas y ambiente local.</p>
-    <a href="https://www.google.com/maps?q=Bar+El+Lechuguita+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
-  </div>
-  <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
-    <p><strong>Churrería Alba</strong></p>
-    <p>Perfecta para probar los churros y dulces típicos de Ronda.</p>
-    <a href="https://www.google.com/maps?q=Churrería+Alba+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
-  </div>
-</div>
+    <h2>PLANES IMPRESCINDIBLES EN RONDA</h2>
+    <p>No te pierdas estos lugares y experiencias:</p>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:20px;">
+        <!-- tarjetas lugares -->
+    </div>
 </section>
 
-<!-- CONTACTO -->
 <section>
 <h2>CONTACTO</h2>
 <p>Si necesitas hacer alguna pregunta o ponerte en contacto con nosotros, aquí tienes nuestros números:</p>
-<div style="margin-top:20px;padding:20px;background:white;max-width:400px;margin-left:auto;margin-right:auto;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.05);text-align:left;font-size:1em;">
+<div style="margin-top:20px;padding:20px;background:white;max-width:400px;margin:auto;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.05);text-align:left;">
 <p><strong>Iñaki Salaberria</strong></p>
-<a class="boton-whatsapp" href="https://wa.me/34680842493" target="_blank" rel="noopener noreferrer">💬 Escribir por WhatsApp</a>
+<a class="boton-whatsapp" href="https://wa.me/34680842493" target="_blank">💬 Escribir por WhatsApp</a>
 
 <p style="margin-top:20px;"><strong>Nerea Aizpuru</strong></p>
-<a class="boton-whatsapp" href="https://wa.me/34697923033" target="_blank" rel="noopener noreferrer">💬 Escribir por WhatsApp</a>
+<a class="boton-whatsapp" href="https://wa.me/34697923033" target="_blank">💬 Escribir por WhatsApp</a>
 </div>
 </section>
 
-<!-- REGALO -->
 <section>
 <h2>REGALO</h2>
 <p>Vuestra compañía será nuestro mayor regalo, pero si deseáis tener un detalle con nosotros, podéis ayudarnos a comenzar esta nueva etapa.</p>
-<div style="margin-top:20px;padding:20px;background:white;max-width:400px;margin-left:auto;margin-right:auto;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+<div style="margin-top:20px;padding:20px;background:white;max-width:400px;margin:auto;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
 <p><strong>IBAN</strong></p>
-<p>ES33 1583 0001 1891 8952 4373</p>
+<p class="iban">ES00 0000 0000 0000 0000 0000</p>
 <p style="font-size:0.8em;color:#555;">¡Gracias!</p>
 </div>
 </section>
