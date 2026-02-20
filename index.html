@@ -3,9 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nerea & Iñaki - 11 Julio 2026</title>
+
+<!-- Open Graph optimizado para WhatsApp sin título visible -->
+<meta property="og:title" content="">
+<meta property="og:description" content="PULSA PARA VER LA INVITACIÓN">
+<meta property="og:image" content="https://raw.githubusercontent.com/InakiyNerea/INVITACION-BODA/main/ronda-portada.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://inakiynerea.github.io/INVITACION-BODA/">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="PULSA PARA VER LA INVITACIÓN">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/InakiyNerea/INVITACION-BODA/main/ronda-portada.jpg">
+
+<!-- SEO básico -->
+<meta name="description" content="PULSA PARA VER LA INVITACIÓN">
+<link rel="canonical" href="https://inakiynerea.github.io/INVITACION-BODA/">
 
 <!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@400;600&family=Italianno&display=swap" rel="stylesheet">
 
 <style>
@@ -23,17 +43,17 @@ p{margin:5px;}
 #pantalla-inicial{
     position:fixed;
     inset:0;
-    background:url("ronda-portada.jpg") no-repeat center top;
+    background:url("https://raw.githubusercontent.com/BodaIyN/IyN/main/ronda-portada.jpg") no-repeat center top;
     background-size:cover;
     display:flex;
     flex-direction:column;
     align-items:center;
-    justify-content:flex-start; /* inicio superior */
-    padding-top:40px;
+    justify-content:center;
+    text-align:center;
     z-index:9999;
     transition:opacity 1s;
-    text-align:center;
 }
+
 #pantalla-inicial p{
     color:#fff;
     font-weight:600;
@@ -41,9 +61,9 @@ p{margin:5px;}
     font-size:1.2em;
 }
 
-/* Botón abrir invitación transparente con efecto vibrante */
+/* Botón abrir invitación */
 .boton-inicial{
-    margin-top:75px;
+    margin-top:40px;
     padding:12px 25px;
     border-radius:30px;
     border:1px solid #fff;
@@ -57,15 +77,39 @@ p{margin:5px;}
     transition:0.3s;
     animation:vibrar 1s infinite;
 }
+
+.boton-inicial:hover{
+    background:#fff;
+    color:#000;
+}
+
 @keyframes vibrar{
     0%,100%{transform:translateY(0);}
     25%{transform:translateY(-3px);}
     50%{transform:translateY(2px);}
     75%{transform:translateY(-2px);}
 }
-.boton-inicial:hover{
+
+/* BOTONES */
+.boton,.boton-maps,.boton-whatsapp,.boton-copiar{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:10px;
+    padding:10px 20px;
+    border-radius:30px;
+    border:1px solid #000;
     background:#fff;
     color:#000;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+    outline:none;
+    -webkit-tap-highlight-color: transparent;
+}
+.boton:hover,.boton-maps:hover,.boton-whatsapp:hover,.boton-copiar:hover{
+    background:#000;
+    color:#fff;
 }
 
 /* SECCIONES INVITACIÓN */
@@ -138,24 +182,93 @@ h2{
     margin-top:25px;
 }
 
-/* BOTONES */
-.boton-maps,.boton-whatsapp,.boton{
-    display:inline-flex;
+/* RESPONSIVE */
+@media(max-width:480px){
+    #pantalla-inicial{
+        justify-content:flex-start;
+        padding-top:20px;
+    }
+    .boton-inicial{
+        margin-top:40vh;
+        padding:12px 20px;
+        font-size:1em;
+    }
+    #invitation{
+        padding:30px 15px;
+    }
+    #foto-invitacion{
+        max-width:95%;
+        height:auto;
+        margin-top:20px;
+        border-radius:10px;
+    }
+    .cuenta-atras{
+        gap:8px;
+        margin-top:20px;
+    }
+    .iniciales{
+        font-size:2.5em;
+        letter-spacing:8px;
+    }
+    #fecha-inicial{
+        font-size:1em;
+        margin-bottom:15px;
+    }
+    h2{font-size:1.3em;}
+    .caja{min-width:50px;padding:10px 5px;}
+}
+
+/* UBICACIÓN CENTRADA */
+.ubicacion-img, .ceremonia, .celebracion{
+    display:flex;
+    flex-direction:column;
     align-items:center;
-    justify-content:center;
-    margin-top:10px;
-    padding:10px 20px;
-    border-radius:30px;
-    border:1px solid #000;
-    background:#fff;
+    text-align:center;
+}
+
+/* SECCIÓN REGALO */
+.regalo{
+    text-align:center;
+    padding:60px 20px;
+}
+.texto-regalo{
+    max-width:600px;
+    margin:0 auto 30px auto;
+}
+.caja-regalo{
+    margin:0 auto;
+    padding:25px;
+    background:white;
+    max-width:400px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.05);
+}
+.titulo-iban{
+    font-weight:600;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+.iban{
+    font-family:Arial, sans-serif;
+    font-weight:400;
     color:#000;
     text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
+    font-size:1em;
+    letter-spacing:1px;
+    white-space:nowrap;
+    overflow-x:auto;
+    text-align:center;
 }
-.boton-maps:hover,.boton-whatsapp:hover,.boton:hover{
-    background:#000;
-    color:#fff;
+.gracias{
+    font-size:0.85em;
+    color:#777;
+}
+.regalo footer{
+    margin-top:30px;
+    font-size:1em;
+    color:#555;
+    font-style:italic;
+    text-align:center;
 }
 
 /* FLECHA SCROLL */
@@ -181,70 +294,6 @@ h2{
     height:20px;
     stroke:#000000;
 }
-
-/* RESPONSIVE Y CENTRADO VERTICAL */
-@media(max-width:480px){
-    #pantalla-inicial{
-        justify-content:flex-start;
-        padding-top:20px;
-    }
-
-    #invitation{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
-        padding:30px 15px;
-    }
-
-    #foto-invitacion{
-        max-width:95%;
-        height:auto;
-        margin-top:20px;
-        border-radius:10px;
-    }
-
-    .cuenta-atras{
-        gap:8px;
-        margin-top:20px;
-    }
-
-    .iniciales{
-        font-size:2.5em;
-        letter-spacing:8px;
-    }
-
-    #fecha-inicial{
-        font-size:1em;
-        margin-bottom:15px;
-    }
-
-    .boton-inicial{
-        padding:12px 20px;
-        margin-top:40vh;
-        font-size:1em;
-    }
-
-    h2{font-size:1.3em;}
-    .caja{min-width:50px;padding:10px 5px;}
-}
-
-/* UBICACIÓN CENTRADA */
-.ubicacion-img, .ceremonia, .celebracion{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-}
-
-/* REGALO - IBAN */
-.iban{
-    font-family:'Cormorant Garamond', serif;
-    font-weight:400;
-    color:#000;
-    text-decoration:none;
-    font-size:1em;
-}
 </style>
 </head>
 <body>
@@ -265,14 +314,14 @@ h2{
         <div class="caja"><strong id="m">0</strong>MINUTOS</div>
         <div class="caja"><strong id="s">0</strong>SEGUNDOS</div>
     </div>
-    <img id="foto-invitacion" src="foto1.jpg" alt="Foto invitación">
+    <img id="foto-invitacion" src="foto1.jpg" alt="Foto invitación" loading="lazy">
 </section>
 
 <!-- SECCIONES: PROGRAMA, CONFIRMA, UBICACIÓN, PLANES, CONTACTO, REGALO -->
 <section>
     <h2>PROGRAMA</h2>
     <p>Os compartimos cómo será nuestro día para que podáis organizaros mejor.</p>
-    <img src="programa.PNG" alt="Programa boda" style="max-width:90%; margin-top:20px; border-radius:10px;">
+    <img src="programa.PNG" alt="Programa boda" loading="lazy" style="max-width:90%; margin-top:20px; border-radius:10px;">
 </section>
 
 <section>
@@ -285,16 +334,16 @@ h2{
     <h2>UBICACIÓN</h2>
     <p style="max-width:700px;margin:20px auto;">Nos casamos en la preciosa ciudad de Ronda.</p>
     <div class="ubicacion-img">
-        <img src="ronda.jpg" alt="Ronda" style="max-width:90%; margin-top:15px; border-radius:10px;">
+        <img src="ronda.jpg" alt="Ronda" loading="lazy" style="max-width:90%; margin-top:15px; border-radius:10px;">
         <div class="ceremonia">
             <h3>Ceremonia</h3>
             <p>Iglesia de Padre Jesús<br>C/ Real, 13<br>Ronda, Málaga</p>
-            <iframe src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-top:10px;" loading="lazy"></iframe>
+            <iframe title="Ubicación Iglesia de Padre Jesús" src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-top:10px;" loading="lazy"></iframe>
         </div>
         <div class="celebracion" style="margin-top:15px;">
             <h3>Celebración</h3>
             <p>Heredad Los Alba<br>Carretera Algeciras, Ronda</p>
-            <iframe src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-top:10px;" loading="lazy"></iframe>
+            <iframe title="Ubicación Heredad Los Alba" src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-top:10px;" loading="lazy"></iframe>
         </div>
     </div>
 </section>
@@ -304,11 +353,28 @@ h2{
     <p>No te pierdas estos lugares y experiencias:</p>
 <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:20px;">
   <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
-    <p><strong>Puente Nuevo</strong></p>
-    <p>El icono más famoso de Ronda, perfecto para fotos impresionantes.</p>
-    <a href="https://www.google.com/maps?q=Puente+Nuevo+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
-  </div>
-  <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
+  <p><strong>Puente Nuevo</strong></p>
+<p>El icono más famoso de Ronda, perfecto para fotos impresionantes.</p>
+<a  href="https://www.google.com/maps/place/El+Tajo+de+Ronda,+C.+Armi%C3%B1%C3%A1n,+3,+29400+Ronda,+M%C3%A1laga/@36.7406982,-5.165843,15z/data=!4m6!3m5!1s0xd0d3138c61c2951:0x8d3fc263e952b0dd!8m2!3d36.7406982!4d-5.165843!16s%2Fg%2F11g9vz8mjm?utm_campaign=ml-ardl-aht_2026&g_ep=Eg1tbF8yMDI2MDIxNl8wIJvbDyoASAJQAQ%3D%3D" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   class="boton-maps">
+   Ver en Google Maps
+</a>
+</div>
+<div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
+ <p><strong>Casa del Rey Moro</strong></p>
+    <p>La Casa del Rey Moro con la Mina de Agua de época musulmana, la Casa de estilo Neomudéjar y el Jardín diseñado por Forestier.</p>
+<a  href="https://www.google.com/maps/place/Casa+del+Rey+Moro,+C.+Cta.+de+Santo+Domingo,+9,+29400+Ronda,+M%C3%A1laga/@36.739841,-5.164358,15z/data=!4m6!3m5!1s0xd0d313f52395cc3:0xcd26a8d25ead3ffb!8m2!3d36.739841!4d-5.164358!16s%2Fg%2F120hthd8?utm_campaign=ml-ardl-aht_2026&g_ep=Eg1tbF8yMDI2MDIxNl8wIOC7DCoASAJQAQ%3D%3D"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="boton-maps">
+   Ver en Google Maps
+</a>
+</div>
+
+<div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
+
     <p><strong>Plaza de Toros</strong></p>
     <p>Una de las plazas más antiguas de España, con mucho encanto histórico.</p>
     <a href="https://www.google.com/maps?q=Plaza+de+Toros+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
@@ -332,28 +398,46 @@ h2{
 </section>
 
 <section>
-<h2>CONTACTO</h2>
-<p>Si necesitas hacer alguna pregunta o ponerte en contacto con nosotros, aquí tienes nuestros números:</p>
-<div style="margin-top:20px;padding:20px;background:white;max-width:400px;margin:auto;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.05);text-align:left;">
-<p><strong>Iñaki Salaberria</strong></p>
-<a class="boton-whatsapp" href="https://wa.me/34680842493" target="_blank">💬 Escribir por WhatsApp</a>
+  <h2>CONTACTO</h2>
+  <p>Si necesitas hacer alguna pregunta o ponerte en contacto con nosotros, escríbenos a nuestros números:</p>
+  
+  <div style="margin-top:20px; padding:20px; background:white; max-width:400px; margin:auto; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); text-align:center;">
 
-<p style="margin-top:20px;"><strong>Nerea Aizpuru</strong></p>
-<a class="boton-whatsapp" href="https://wa.me/34697923033" target="_blank">💬 Escribir por WhatsApp</a>
+    <!-- Nombres en la misma línea -->
+<div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:10px; margin-bottom:15px;">
+  <strong>Iñaki Salaberria</strong>
+  <strong>Nerea Aizpuru</strong>
 </div>
-</section>
 
-<section>
-<h2>REGALO</h2>
-<p>Vuestra compañía será nuestro mayor regalo, pero si deseáis tener un detalle con nosotros, podéis ayudarnos a comenzar esta nueva etapa.</p>
-<div style="margin-top:20px;padding:20px;background:white;max-width:400px;margin:auto;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
-<p><strong>IBAN</strong></p>
-<p class="iban">ES00 0000 0000 0000 0000 0000</p>
-<p style="font-size:0.8em;color:#555;">¡Gracias!</p>
+<!-- Botones debajo de los nombres -->
+<div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:10px;">
+  <a class="boton-whatsapp" href="https://wa.me/34680842493" target="_blank">💬 WhatsApp</a>
+  <a class="boton-whatsapp" href="https://wa.me/34697923033" target="_blank">💬 WhatsApp</a>
 </div>
-</section>
 
-<footer>Con mucho cariño, os esperamos</footer>
+  </div>
+</section>
+<section class="regalo">
+    <h2>REGALO</h2>
+    <p class="texto-regalo">
+        Vuestra compañía será nuestro mayor regalo, pero si deseáis tener un detalle con nosotros,
+        podéis ayudarnos a comenzar esta nueva etapa.
+    </p>
+
+    <div class="caja-regalo">
+        <p class="titulo-iban">IBAN</p>
+        <p class="iban" id="ibanTexto">ES00 0000 0000 0000 0000 0000</p>
+
+        <button class="boton-copiar" onclick="copiarIBAN()">
+            Copiar IBAN
+        </button>
+
+        <p class="gracias" id="Copiado"></p>
+    </div>
+
+    <!-- Footer fuera de la caja, pero dentro de la sección -->
+    <footer>Con mucho cariño, os esperamos</footer>
+</section>
 
 <div class="flecha-scroll" id="flecha" onclick="scrollAbajo()">
 <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -362,7 +446,7 @@ h2{
 </svg>
 </div>
 
-<script>
+<script defer>
 // ABRIR INVITACIÓN
 function abrirInvitacion(e){
   e.preventDefault();
@@ -377,30 +461,40 @@ function abrirInvitacion(e){
 }
 
 // FLECHA
-function mostrarFlecha(){ const f=document.getElementById("flecha"); f.style.display="flex"; setTimeout(()=>{f.style.opacity="1";},50);}
-function scrollAbajo(){ document.querySelector("section").scrollIntoView({behavior:"smooth"});}
-
-// FLECHA DESAPARECE
-const flecha=document.getElementById("flecha");
-const primeraSeccion=document.querySelector("section");
-window.addEventListener("scroll",()=>{
-  const pos=primeraSeccion.getBoundingClientRect().top;
-  if(pos<=window.innerHeight/2){ flecha.style.opacity="0"; setTimeout(()=>{flecha.style.display="none";},500);}
-  else{ if(flecha.style.display==="none"){ flecha.style.display="flex"; setTimeout(()=>{flecha.style.opacity="1";},50);} }
-});
+function mostrarFlecha(){ 
+    const f=document.getElementById("flecha"); 
+    f.style.display="flex"; 
+    setTimeout(()=>{f.style.opacity="1";},50);
+}
+function scrollAbajo(){ 
+    document.querySelector("section").scrollIntoView({behavior:"smooth"});
+}
 
 // CUENTA ATRÁS
 const fechaBoda=new Date(2026,6,11,0,0,0).getTime();
 setInterval(function(){
   const ahora=new Date().getTime();
   const diff=fechaBoda-ahora;
-  if(diff<=0){ document.getElementById("d").innerText=0; document.getElementById("h").innerText=0;
-    document.getElementById("m").innerText=0; document.getElementById("s").innerText=0; return;}
+  if(diff<=0){ 
+      document.getElementById("d").innerText=0; 
+      document.getElementById("h").innerText=0;
+      document.getElementById("m").innerText=0; 
+      document.getElementById("s").innerText=0; 
+      return;
+  }
   document.getElementById("d").innerText=Math.floor(diff/(1000*60*60*24));
   document.getElementById("h").innerText=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
   document.getElementById("m").innerText=Math.floor((diff%(1000*60*60))/(1000*60));
   document.getElementById("s").innerText=Math.floor((diff%(1000*60))/1000);
 },1000);
-</script>
-</body>
-</html>
+
+function copiarIBAN() {
+    const texto = document.getElementById("ibanTexto").innerText;
+    navigator.clipboard.writeText(texto).then(function() {
+        document.getElementById("Copiado").innerText = "IBAN copiado ✔";
+        setTimeout(() => {
+            document.getElementById("Copiado").innerText = "";
+        }, 2000);
+    });
+}
+            </script>
