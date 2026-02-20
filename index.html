@@ -3,240 +3,229 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Iñaki y Nerea - 11 de Julio de 2026</title>
+<title>Nerea & Iñaki - 11 Julio 2026</title>
 
-<!-- Fuentes -->
-<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-body { margin:0; font-family: Georgia, serif; background-color:#f5f5f5; color:#000; text-align:center; }
-p { font-size:1em; line-height:1.8; font-weight:400; }
-
-/* --- PANTALLA INICIAL --- */
-#pantalla-inicial {
-    position: fixed; inset:0; background: url("ronda-portada.jpg") no-repeat center center;
-    background-size: cover; display:flex; flex-direction:column; align-items:center; justify-content:center;
-    color:white; z-index:9999; text-align:center; transition:opacity 1.2s ease;
+body{
+    margin:0;
+    font-family:'Cormorant Garamond', serif;
+    background:#fff;
+    color:#000;
+    text-align:center;
 }
-#pantalla-inicial .preliminar-frase { position:absolute; top:10%; width:100%; text-align:center; font-size:1em; letter-spacing:3px; opacity:0.85; font-weight:600; }
-#pantalla-inicial .fecha-inicial, #pantalla-inicial .lugar-inicial { margin-top:10px; font-size:1em; opacity:0.9; }
-#pantalla-inicial .boton { position:absolute; top:65%; transform:translateY(0); display:inline-block; padding:16px 40px; width:70%; max-width:250px;
-    border:1.5px solid rgba(255,255,255,0.9); border-radius:35px; text-decoration:none; color:white; font-weight:600; letter-spacing:1.2px;
-    font-size:1em; cursor:pointer; background-color:transparent; transition: all 0.2s ease; animation:vibrar 2s infinite;
+section{
+    padding:60px 20px;
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 0.8s ease;
 }
-#pantalla-inicial .boton:hover { background-color: rgba(255,255,255,0.2); }
-@keyframes vibrar { 0%,50%,100%{transform:translateY(0) scale(1);} 25%,75%{transform:translateY(0) scale(1.05);} }
-
-/* --- HEADER --- */
-header { padding:80px 20px 40px; background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url("ronda.jpg"); background-size:cover; background-position:center;
-    position:relative; text-align:center; display:none; opacity:0; transform:translateY(50px); transition:all 1s ease;
+section.visible{ opacity:1; transform:translateY(0);}
+h1,h2{font-weight:500; letter-spacing:2px;}
+h2{margin-bottom:20px;}
+.iniciales{font-size:3.5em; letter-spacing:8px; margin-bottom:10px;}
+.separador{font-size:2.5em; margin:0 15px;}
+.boton{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 32px;
+    border:1px solid #000;
+    border-radius:30px;
+    text-decoration:none;
+    color:#000;
+    font-weight:600;
+    transition:0.3s;
 }
-header.visible { opacity:1; transform:translateY(0); }
-header h1 { font-family:'Italianno',cursive; font-size:4em; letter-spacing:2px; color:#4caf50;
-    text-shadow:0 0 10px #4caf50,0 0 20px #4caf50,0 0 30px #a5d6a7; opacity:0; transform:scale(0.8); transition:all 1s ease; }
-header.visible h1 { opacity:1; transform:scale(1); }
-.fecha-header { letter-spacing:2px; margin-top:10px; }
-.lugar-header { letter-spacing:1.5px; font-size:0.9em; margin-bottom:20px; opacity:0.85; }
-
-/* --- CUENTA ATRÁS --- */
-.cuenta-atras { display:flex; justify-content:center; gap:15px; margin-top:20px; }
-.cuenta-atras .unidad { display:flex; flex-direction:column; align-items:center; background: rgba(255,255,255,0.9); padding:15px 10px; border-radius:15px; min-width:60px; box-shadow:0 4px 12px rgba(0,0,0,0.1);}
-.cuenta-atras .numero { font-size:1.5em; font-weight:700; color:#333; }
-.cuenta-atras .etiqueta { font-size:0.7em; color:#555; margin-top:5px; }
-
-/* --- SECCIONES --- */
-section { padding:40px 15px; margin:20px; background:#fff; border-radius:15px; box-shadow:0 6px 15px rgba(0,0,0,0.08); opacity:0; transform:translateY(50px); transition:all 1s ease; }
-section.visible { opacity:1; transform:translateY(0); }
-section h2 { font-family:'Montserrat',sans-serif!important; font-size:1.8em; font-style:italic; font-weight:500; margin-bottom:20px; }
-
-/* --- BOTÓN CONFIRMAR ASISTENCIA --- */
-a.boton[href*="google.com"] { background:linear-gradient(135deg,#8bc34a,#4caf50); color:white; border:none; border-radius:30px; padding:12px 35px; display:inline-block; font-weight:600; transition:all 0.3s ease; }
-a.boton[href*="google.com"]:hover { transform:scale(1.05); box-shadow:0 6px 15px rgba(0,0,0,0.2); }
-
-/* --- BOTONES GOOGLE MAPS --- */
-a.boton-mapa { display:inline-block; padding:10px 20px; border-radius:25px; background:#4caf50; color:white; text-decoration:none; font-weight:600; transition:all 0.3s; margin-top:10px; }
-a.boton-mapa:hover { transform:scale(1.05); box-shadow:0 4px 12px rgba(0,0,0,0.2); }
-
-/* --- FOOTER --- */
-footer { padding:40px 15px; font-size:0.9em; }
-
-/* --- FLECHA DESPLAZAR ABAJO --- */
-.flecha-scroll { position:fixed; left:50%; bottom:20px; transform:translateX(-50%); width:50px; height:50px; border-radius:50%; background-color:rgba(85,107,47,0.1); cursor:pointer; z-index:1000; display:flex; align-items:center; justify-content:center; opacity:0; animation:bounce 1.5s infinite; transition:opacity 0.8s ease;}
-.flecha-scroll svg { width:22px; height:22px; stroke:#000000; }
-@keyframes bounce {0%,20%,50%,80%,100%{ transform: translateX(-50%) translateY(0);} 40%{ transform: translateX(-50%) translateY(10px);} 60%{ transform: translateX(-50%) translateY(5px);} }
-
-/* --- RESPONSIVE --- */
-@media (max-width:480px){ header h1{font-size:2.2em;} .cuenta-atras{font-size:0.8em; padding:10px 20px;} #pantalla-inicial .boton{width:80%; padding:14px 25px; font-size:0.95em;} }
+.boton:hover{background:#000;color:#fff;}
+.cuenta-atras{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+.caja{
+    min-width:70px;
+}
+.caja strong{font-size:1.8em; display:block;}
+.boton-maps,.boton-whatsapp{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:12px;
+    padding:10px 22px;
+    border-radius:30px;
+    border:1px solid #000;
+    background:#fff;
+    color:#000;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+.boton-maps:hover,.boton-whatsapp:hover{background:#000;color:#fff;}
+footer{padding:40px 20px; font-size:0.9em;}
+.flecha-scroll{
+    position:fixed; left:50%; bottom:20px; transform:translateX(-50%);
+    width:50px; height:50px; border-radius:50%;
+    background-color:rgba(0,0,0,0.1); cursor:pointer; z-index:1000;
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; transition:opacity 0.5s;
+}
+.flecha-scroll svg{width:22px;height:22px; stroke:#000000;}
+#pantalla-inicial{
+    position:fixed; inset:0;
+    background:url("ronda-portada.jpg") no-repeat center center;
+    background-size:cover;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    color:white; z-index:9999; text-align:center;
+    transition:opacity 1s;
+}
+#pantalla-inicial .boton{position:absolute;top:65%;transform:translateY(0);}
+@media(max-width:480px){.iniciales{font-size:2.5em;}.separador{font-size:2em;}.boton{padding:12px 25px;}}
 </style>
 </head>
 <body>
 
-<!-- PANTALLA INICIAL -->
+<!-- Pantalla inicial -->
 <div id="pantalla-inicial">
-    <p class="preliminar-frase">¡EL DÍA SE ACERCA!</p>
+    <p>¡EL DÍA SE ACERCA!</p>
     <a href="#" class="boton" onclick="abrirInvitacion(event)">Abrir invitación</a>
 </div>
 
-<!-- HEADER -->
-<header id="contenido-invitacion">
-    <h1>NEREA & IÑAKI</h1>
-    <p class="fecha-header">11 · JULIO · 2026</p>
-    <p class="lugar-header">Ronda, Málaga</p>
-    <div class="cuenta-atras" id="contador"></div>
-</header>
-
-<!-- SECCIONES -->
-<section>
-    <h2>PROGRAMA DEL DÍA</h2>
-    <div class="programa"><img src="programa.PNG" alt="Programa boda"></div>
-</section>
-
-<section>
-    <h2>UBICACIÓN</h2>
-    <p style="max-width:700px;margin:20px auto;">Nos casamos en la preciosa ciudad de Ronda.</p>
-    <div style="max-width:900px;margin:auto;margin-top:20px;">
-        <h3><span>✝</span> Ceremonia</h3>
-        <p>Iglesia de Padre Jesús<br>C/ Real, 13<br>Ronda, Málaga</p>
-        <iframe src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-bottom:20px;" loading="lazy"></iframe>
-
-        <h3><span>✧</span> Celebración 🍃</h3>
-        <p>Heredad Los Alba<br>Carretera Algeciras, Ronda</p>
-        <iframe src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px;" loading="lazy"></iframe>
+<!-- INVITACIÓN -->
+<section id="invitation">
+    <div class="iniciales">N<span class="separador">|</span>I</div>
+    <p>11 · 07 · 2026 · Ronda</p>
+    <div class="cuenta-atras" id="countdown">
+        <div class="caja"><strong id="d">0</strong>días</div>
+        <div class="caja"><strong id="h">0</strong>horas</div>
+        <div class="caja"><strong id="m">0</strong>minutos</div>
+        <div class="caja"><strong id="s">0</strong>segundos</div>
     </div>
 </section>
 
+<!-- PROGRAMA -->
 <section>
-    <h2>PLANES EN RONDA</h2>
-    <p style="max-width:700px;margin:20px auto;line-height:1.6;">No te pierdas estos lugares y experiencias imprescindibles:</p>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:20px;">
-        <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
-            <p><strong>Puente Nuevo</strong></p>
-            <p>El icono más famoso de Ronda, perfecto para fotos impresionantes.</p>
-            <a href="https://www.google.com/maps?q=Puente+Nuevo+Ronda" target="_blank" class="boton-mapa">Ver en Google Maps</a>
-        </div>
+    <h2>Programa</h2>
+    <p>Os compartimos cómo será nuestro día para que podáis organizaros mejor.</p>
+    <img src="programa.PNG" alt="Programa boda" style="max-width:90%; margin-top:20px; border-radius:10px;">
+</section>
 
-        <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
-            <p><strong>Plaza de Toros</strong></p>
-            <p>Una de las plazas más antiguas de España, con mucho encanto histórico.</p>
-            <a href="https://www.google.com/maps?q=Plaza+de+Toros+Ronda" target="_blank" class="boton-mapa">Ver en Google Maps</a>
-        </div>
+<!-- CONFIRMA TU ASISTENCIA -->
+<section>
+    <h2>Confirma tu asistencia</h2>
+    <p>Nos encantaría contar contigo en nuestro día. Por favor, confirma tu asistencia antes del <strong>21 de Marzo de 2026</strong>.</p>
+    <a class="boton" href="https://docs.google.com/forms/d/e/1FAIpQLSfqXMHrm615boPe7YyzUk5AhUR8w9_5d807FafDdk79SJjrnA/viewform?usp=sf_link" target="_blank">
+        Confirmar asistencia
+    </a>
+</section>
 
-        <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
-            <p><strong>Miradores</strong></p>
-            <p>Disfruta de vistas panorámicas del Tajo de Ronda y el paisaje natural.</p>
-            <a href="https://www.google.com/maps?q=Miradores+Ronda" target="_blank" class="boton-mapa">Ver en Google Maps</a>
-        </div>
+<!-- UBICACIÓN -->
+<section>
+    <h2>Ubicación</h2>
+    <p>Nos casamos en la preciosa ciudad de Ronda.</p>
+    <img src="ronda.jpg" alt="Ronda" style="max-width:90%; margin-top:20px; border-radius:10px;">
+</section>
 
-        <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
-            <p><strong>Bar El Lechuguita</strong></p>
-            <p>Uno de los bares más auténticos de Ronda, ideal para tapas y ambiente local.</p>
-            <a href="https://www.google.com/maps?q=Bar+El+Lechuguita+Ronda" target="_blank" class="boton-mapa">Ver en Google Maps</a>
-        </div>
+    <div style="margin-top:20px;">
+        <h3><strong>✝ Ceremonia</strong></h3>
+        <p>Iglesia de Padre Jesús · C/ Real, 13 · Ronda</p>
+        <a class="boton-maps" href="https://maps.google.com/?q=Iglesia+de+Padre+Jesus+Ronda" target="_blank">📍 Ver ubicación</a>
+    </div>
 
-        <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
-            <p><strong>Churrería Alba</strong></p>
-            <p>Perfecta para probar los churros y dulces típicos de Ronda.</p>
-            <a href="https://www.google.com/maps?q=Churrería+Alba+Ronda" target="_blank" class="boton-mapa">Ver en Google Maps</a>
-        </div>
+    <div style="margin-top:30px;">
+        <h3><strong>✧ Celebración 🍃</strong></h3>
+        <p>Heredad Los Alba · Carretera Algeciras · Ronda</p>
+        <a class="boton-maps" href="https://maps.google.com/?q=Heredad+Los+Alba+Ronda" target="_blank">🥂 Ver ubicación</a>
     </div>
 </section>
 
+<!-- PLANES -->
 <section>
-    <h2>CONTACTO</h2>
-    <p style="max-width:700px;margin:20px auto;line-height:1.6;">Si necesitas hacer alguna pregunta o ponerte en contacto con nosotros, aquí tienes nuestros números:</p>
-    <div style="margin-top:20px;padding:20px;background:white;max-width:400px;margin-left:auto;margin-right:auto;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.05);text-align:left;font-size:1em;">
-        <p><strong>Iñaki Salaberria:</strong> 680 842 493</p>
-        <p><strong>Nerea Aizpuru:</strong> 697 923 033</p>
+    <h2>Planes imprescindibles en Ronda</h2>
+
+    <div style="margin-top:15px;">
+        <p><strong>Puente Nuevo</strong></p>
+        <a class="boton-maps" target="_blank" href="https://maps.google.com/?q=Puente+Nuevo+Ronda">🌉 Ver en Google Maps</a>
+    </div>
+
+    <div style="margin-top:15px;">
+        <p><strong>Plaza de Toros</strong></p>
+        <a class="boton-maps" target="_blank" href="https://maps.google.com/?q=Plaza+de+Toros+Ronda">🐂 Ver en Google Maps</a>
+    </div>
+
+    <div style="margin-top:15px;">
+        <p><strong>Alameda del Tajo</strong></p>
+        <a class="boton-maps" target="_blank" href="https://maps.google.com/?q=Alameda+del+Tajo+Ronda">🌿 Ver en Google Maps</a>
+    </div>
+
+    <div style="margin-top:15px;">
+        <p><strong>Bar El Lechuguita</strong></p>
+        <a class="boton-maps" target="_blank" href="https://maps.google.com/?q=Bar+El+Lechuguita+Ronda">🍷 Ver en Google Maps</a>
+    </div>
+
+    <div style="margin-top:15px;">
+        <p><strong>Churrería Alba</strong></p>
+        <a class="boton-maps" target="_blank" href="https://maps.google.com/?q=Churreria+Alba+Ronda">☕ Ver en Google Maps</a>
     </div>
 </section>
 
+<!-- CONTACTO -->
 <section>
-    <h2>REGALO</h2>
-    <p style="max-width:700px;margin:20px auto;line-height:1.8;">Vuestra compañía será nuestro mayor regalo, pero si deseáis tener un detalle con nosotros, podéis ayudarnos a comenzar esta nueva etapa.</p>
-    <div style="margin-top:20px;padding:20px;background:white;max-width:400px;margin-left:auto;margin-right:auto;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
-        <p><strong>Cuenta bancaria</strong></p>
-        <p>ES00 0000 0000 0000 0000 0000</p>
-        <p style="font-size:0.8em;color:#555;">¡Gracias!</p>
-    </div>
+    <h2>Contacto</h2>
+    <p>Para cualquier duda o consulta:</p>
+
+    <p><strong>Iñaki Salaberria</strong></p>
+    <a class="boton-whatsapp" href="https://wa.me/34680842493" target="_blank">💬 Escribir por WhatsApp</a>
+
+    <p style="margin-top:20px;"><strong>Nerea Aizpuru</strong></p>
+    <a class="boton-whatsapp" href="https://wa.me/34697923033" target="_blank">💬 Escribir por WhatsApp</a>
 </section>
 
-<footer>Con mucho cariño, os esperamos</footer>
+<!-- REGALO -->
+<section>
+    <h2>Regalo</h2>
+    <p style="max-width:700px;margin:0 auto;line-height:1.6;">
+        Vuestra compañía será nuestro mayor regalo, pero si deseáis tener un detalle con nosotros, podéis ayudarnos a comenzar esta nueva etapa.
+    </p>
+</section>
 
-<div class="flecha-scroll" id="flecha" onclick="scrollAbajo()">
+<footer>Con todo nuestro cariño 💍</footer>
+
+<div class="flecha-scroll" id="flecha" onclick="document.querySelector('section.visible + section').scrollIntoView({behavior:'smooth'})">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="12" y1="5" x2="12" y2="19"></line>
         <polyline points="19 12 12 19 5 12"></polyline>
     </svg>
 </div>
 
-<canvas id="confeti" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;display:none;z-index:9998;"></canvas>
-
 <script>
-// --- ABRIR INVITACIÓN ---
-function abrirInvitacion(event){
-    event.preventDefault();
-    confetiStart();
-    const pantalla=document.getElementById("pantalla-inicial");
-    pantalla.style.opacity="0";
-    setTimeout(()=>{
-        pantalla.style.display="none";
-        const contenido=document.getElementById("contenido-invitacion");
-        contenido.style.display="block";
-        setTimeout(()=>contenido.classList.add("visible"),50);
-        const secciones=document.querySelectorAll("section");
-        secciones.forEach((sec,index)=>{ setTimeout(()=>sec.classList.add("visible"),index*300); });
-        mostrarFlecha();
-    },1200);
+// ABRIR INVITACIÓN
+function abrirInvitacion(e){
+    e.preventDefault();
+    document.getElementById('pantalla-inicial').style.display='none';
+    const sections = document.querySelectorAll('section');
+    sections.forEach((sec,i)=>{ setTimeout(()=>sec.classList.add('visible'), i*300); });
+    document.getElementById('flecha').style.opacity=1;
 }
 
-// --- FLECHA ---
-function mostrarFlecha(){ const flecha=document.getElementById("flecha"); flecha.style.display="flex"; setTimeout(()=>{flecha.style.opacity="1";},50);}
-function scrollAbajo(){ document.querySelector("section").scrollIntoView({behavior:"smooth"}); }
-
-// --- FLECHA DINÁMICA ---
-const flecha=document.getElementById("flecha");
-const primeraSeccion=document.querySelector("section");
-window.addEventListener("scroll",()=>{
-    const pos=primeraSeccion.getBoundingClientRect().top;
-    if(pos<=window.innerHeight/2){ flecha.style.opacity="0"; setTimeout(()=>{ flecha.style.display="none";},500);}
-    else{ if(flecha.style.display==="none"){ flecha.style.display="flex"; setTimeout(()=>{flecha.style.opacity="1";},50);} }
-});
-
-// --- CUENTA ATRÁS ---
-const fechaBoda=new Date(2026,6,11,0,0,0).getTime();
-setInterval(function(){
-    const ahora=new Date().getTime();
-    const diff=fechaBoda-ahora;
-    if(diff<=0){ document.getElementById("contador").innerHTML="¡Hoy es el gran día!"; return; }
-    const dias=Math.floor(diff/(1000*60*60*24));
-    const horas=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-    const minutos=Math.floor((diff%(1000*60*60))/(1000*60));
-    const segundos=Math.floor((diff%(1000*60))/1000);
-    document.getElementById("contador").innerHTML=
-        `<div class="unidad"><span class="numero">${dias}</span><span class="etiqueta">Días</span></div>
-         <div class="unidad"><span class="numero">${horas}</span><span class="etiqueta">Horas</span></div>
-         <div class="unidad"><span class="numero">${minutos}</span><span class="etiqueta">Minutos</span></div>
-         <div class="unidad"><span class="numero">${segundos}</span><span class="etiqueta">Segundos</span></div>`;
+// CUENTA ATRÁS
+const fechaBoda = new Date(2026,6,11,17,0).getTime();
+setInterval(()=>{
+    const ahora = new Date().getTime();
+    const diff = fechaBoda - ahora;
+    const d = Math.floor(diff / (1000*60*60*24));
+    const h = Math.floor((diff / (1000*60*60)) % 24);
+    const m = Math.floor((diff / (1000*60)) % 60);
+    const s = Math.floor((diff / 1000) % 60);
+    document.getElementById("d").innerText=d;
+    document.getElementById("h").innerText=h;
+    document.getElementById("m").innerText=m;
+    document.getElementById("s").innerText=s;
 },1000);
-
-// --- CONFETI ---
-function confetiStart(){
-    const canvas=document.getElementById("confeti"); canvas.style.display="block";
-    const ctx=canvas.getContext("2d"); canvas.width=window.innerWidth; canvas.height=window.innerHeight;
-    const confeti=[]; const colors=["#ff0","#ff69b4","#4caf50","#00f","#f00"];
-    for(let i=0;i<150;i++){ confeti.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height-canvas.height, r:Math.random()*6+4, d:Math.random()*20, color:colors[Math.floor(Math.random()*colors.length)]}); }
-    let anim=setInterval(()=>{
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        for(let i=0;i<confeti.length;i++){
-            let c=confeti[i]; ctx.beginPath(); ctx.fillStyle=c.color; ctx.arc(c.x,c.y,c.r,0,Math.PI*2); ctx.fill();
-            c.y+=Math.cos(c.d)+1+c.r/2; c.x+=Math.sin(c.d)*2;
-            if(c.y>canvas.height){ c.y=0; c.x=Math.random()*canvas.width; }
-        }
-    },20);
-    setTimeout(()=>{ clearInterval(anim); canvas.style.display="none"; },5000);
-}
 </script>
+
 </body>
 </html>
