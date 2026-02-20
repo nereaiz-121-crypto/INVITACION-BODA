@@ -6,47 +6,220 @@
 <title>Nerea & Iñaki - 11 Julio 2026</title>
 
 <!-- Fuentes -->
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Italianno&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@400;600&family=Italianno&display=swap" rel="stylesheet">
 
 <style>
-body{margin:0;font-family:'Cormorant Garamond', serif;background:#fff;color:#000;text-align:center;}
+/* GLOBAL */
+body{
+    margin:0;
+    font-family:'Cormorant Garamond', serif;
+    background:#fff;
+    color:#000;
+    text-align:center;
+}
 p{margin:5px;}
 
 /* PANTALLA INICIAL */
 #pantalla-inicial{
-    position:fixed; inset:0; background:url("ronda-portada.jpg") no-repeat center top;
-    background-size:cover; display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
-    padding-top:40px; z-index:9999; transition:opacity 1s;
+    position:fixed;
+    inset:0;
+    background:url("ronda-portada.jpg") no-repeat center top;
+    background-size:cover;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    transition:opacity 1s;
+    text-align:center;
 }
-#pantalla-inicial p{color:#fff; font-weight:600; letter-spacing:2px;}
-#pantalla-inicial .boton{
-    margin-top:60vh;padding:14px 32px;border:1px solid #fff;border-radius:30px;color:#fff;font-weight:600;
-    text-decoration:none; animation:parpadeo 1s infinite;
+#pantalla-inicial p{
+    color:#fff;
+    font-weight:600;
+    letter-spacing:2px;
+    font-size:1.2em;
 }
-@keyframes parpadeo{0%,100%{opacity:1;}50%{opacity:0.5;}}
-#pantalla-inicial .boton:hover{background:#fff;color:#000;}
 
-/* INVITACIÓN */
-section{padding:60px 20px; opacity:0; transform:translateY(50px); transition:all 0.8s ease; background:#fefefe; margin:0 0 25px 0; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.05);}
-section.visible{opacity:1; transform:translateY(0);}
-h2{text-transform:uppercase; font-family:'Cormorant Garamond', serif; margin-bottom:20px; letter-spacing:2px; font-size:1.6em;}
-.iniciales{font-size:3em; font-family:'Italianno', cursive; letter-spacing:10px; margin-bottom:10px; color:#000;}
-.separador{font-size:2em; margin:0 10px;}
-.cuenta-atras{display:flex; justify-content:center; gap:15px; margin-top:25px; flex-wrap:wrap;}
-.caja{min-width:60px;background:rgba(255,255,255,0.9);padding:12px 8px;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.1);}
-.caja strong{font-size:1.5em; display:block;}
-.boton-maps,.boton-whatsapp,.boton{display:inline-flex; align-items:center; justify-content:center; margin-top:10px; padding:10px 20px; border-radius:30px; border:1px solid #000; background:#fff; color:#000; text-decoration:none; font-weight:600; transition:0.3s;}
-.boton-maps:hover,.boton-whatsapp:hover,.boton:hover{background:#000;color:#fff;}
-.boton-parpadeante{animation:parpadeo 1s infinite;}
-footer{padding:40px 20px;font-size:0.9em;}
-.flecha-scroll{position:fixed; left:50%; bottom:20px; transform:translateX(-50%);
-    width:45px;height:45px;border-radius:50%; background-color:rgba(0,0,0,0.1);
-    cursor:pointer; z-index:1000; display:flex; align-items:center; justify-content:center;
-    opacity:0; transition:opacity 0.5s;}
-.flecha-scroll svg{width:20px;height:20px; stroke:#000000;}
+/* Botón abrir invitación transparente */
+.boton-inicial{
+    margin-top:25px;
+    padding:12px 25px;
+    border-radius:30px;
+    border:1px solid #fff;
+    background:transparent;
+    color:#fff;
+    font-weight:600;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    transition:0.3s;
+}
+.boton-inicial:hover{
+    background:#fff;
+    color:#000;
+}
 
-/* RESPONSIVE */
-@media(max-width:480px){.iniciales{font-size:2em;}.separador{font-size:1.5em;}h2{font-size:1.3em;}.cuenta-atras{gap:8px;}.caja{min-width:50px;padding:10px 5px;}#pantalla-inicial .boton{padding:12px 25px;margin-top:55vh;}}
+/* SECCIONES INVITACIÓN */
+section{
+    padding:50px 20px;
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 0.8s ease;
+    background:#fefefe;
+    margin:0 0 25px 0;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+}
+section.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+h2{
+    text-transform:uppercase;
+    font-family:'Cormorant Garamond', serif;
+    margin-bottom:20px;
+    letter-spacing:2px;
+    font-size:1.6em;
+}
+
+.iniciales{
+    font-size:3em;
+    font-family:'Playfair Display', serif;
+    letter-spacing:10px;
+    margin-bottom:10px;
+    color:#000;
+}
+
+.separador{
+    font-size:2em;
+    margin:0 10px;
+}
+
+#fecha-inicial{
+    font-weight:500;
+    margin-bottom:20px;
+}
+
+.cuenta-atras{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:25px;
+    flex-wrap:wrap;
+}
+.caja{
+    min-width:60px;
+    background:rgba(255,255,255,0.9);
+    padding:12px 8px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+.caja strong{
+    font-size:1.5em;
+    display:block;
+}
+
+#foto-invitacion{
+    max-width:90%;
+    border-radius:10px;
+    margin-top:25px;
+}
+
+/* BOTONES */
+.boton-maps,.boton-whatsapp,.boton{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-top:10px;
+    padding:10px 20px;
+    border-radius:30px;
+    border:1px solid #000;
+    background:#fff;
+    color:#000;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+.boton-maps:hover,.boton-whatsapp:hover,.boton:hover{
+    background:#000;
+    color:#fff;
+}
+
+/* FLECHA SCROLL */
+.flecha-scroll{
+    position:fixed;
+    left:50%;
+    bottom:20px;
+    transform:translateX(-50%);
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background-color:rgba(0,0,0,0.1);
+    cursor:pointer;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transition:opacity 0.5s;
+}
+.flecha-scroll svg{
+    width:20px;
+    height:20px;
+    stroke:#000000;
+}
+
+/* RESPONSIVE Y CENTRADO VERTICAL */
+@media(max-width:480px){
+    #pantalla-inicial{
+        justify-content:center;
+        padding-top:0;
+    }
+
+    #invitation{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        padding:30px 15px;
+    }
+
+    #foto-invitacion{
+        max-width:95%;
+        height:auto;
+        margin-top:20px;
+        border-radius:10px;
+    }
+
+    .cuenta-atras{
+        gap:8px;
+        margin-top:20px;
+    }
+
+    .iniciales{
+        font-size:2.5em;
+        letter-spacing:8px;
+    }
+
+    #fecha-inicial{
+        font-size:1em;
+        margin-bottom:15px;
+    }
+
+    .boton-inicial{
+        padding:12px 20px;
+        margin-top:25px;
+        font-size:1em;
+    }
+
+    h2{font-size:1.3em;}
+    .caja{min-width:50px;padding:10px 5px;}
+}
 </style>
 </head>
 <body>
@@ -54,7 +227,7 @@ footer{padding:40px 20px;font-size:0.9em;}
 <!-- PANTALLA INICIAL -->
 <div id="pantalla-inicial">
     <p>¡EL DÍA SE ACERCA!</p>
-    <a href="#" class="boton boton-parpadeante" onclick="abrirInvitacion(event)">ABRIR INVITACIÓN</a>
+    <a href="#" class="boton-inicial" onclick="abrirInvitacion(event)">ABRIR INVITACIÓN</a>
 </div>
 
 <!-- INVITACIÓN -->
@@ -67,6 +240,7 @@ footer{padding:40px 20px;font-size:0.9em;}
         <div class="caja"><strong id="m">0</strong>MINUTOS</div>
         <div class="caja"><strong id="s">0</strong>SEGUNDOS</div>
     </div>
+    <img id="foto-invitacion" src="foto1.jpg" alt="Foto invitación">
 </section>
 
 <!-- PROGRAMA -->
@@ -80,7 +254,7 @@ footer{padding:40px 20px;font-size:0.9em;}
 <section>
     <h2>CONFIRMA TU ASISTENCIA</h2>
     <p>Nos encantaría contar contigo en nuestro día. Por favor, confirma tu asistencia antes del <strong>21 de Marzo de 2026</strong>.</p>
-    <a class="boton boton-parpadeante" href="https://docs.google.com/forms/d/e/1FAIpQLSfqXMHrm615boPe7YyzUk5AhUR8w9_5d807FafDdk79SJjrnA/viewform?usp=sf_link" target="_blank">CONFIRMAR ASISTENCIA</a>
+    <a class="boton" href="https://docs.google.com/forms/d/e/1FAIpQLSfqXMHrm615boPe7YyzUk5AhUR8w9_5d807FafDdk79SJjrnA/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">CONFIRMAR ASISTENCIA</a>
 </section>
 
 <!-- UBICACIÓN -->
@@ -89,7 +263,7 @@ footer{padding:40px 20px;font-size:0.9em;}
   <p style="max-width:700px;margin:20px auto;">Nos casamos en la preciosa ciudad de Ronda.</p>
   <div style="max-width:900px;margin:auto;margin-top:20px; text-align:left;">
       <img src="ronda.jpg" alt="Ronda" style="max-width:90%; margin-top:15px; border-radius:10px;">
-      
+     
     <h3>Ceremonia</h3>
     <p>Iglesia de Padre Jesús<br>C/ Real, 13<br>Ronda, Málaga</p>
     <iframe src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="250" style="border:0; border-radius:10px; margin-top:10px;" loading="lazy"></iframe>
@@ -108,27 +282,27 @@ footer{padding:40px 20px;font-size:0.9em;}
   <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
     <p><strong>Puente Nuevo</strong></p>
     <p>El icono más famoso de Ronda, perfecto para fotos impresionantes.</p>
-    <a href="https://www.google.com/maps?q=Puente+Nuevo+Ronda" target="_blank" class="boton-maps">Ver en Google Maps</a>
+    <a href="https://www.google.com/maps?q=Puente+Nuevo+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
   </div>
   <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
     <p><strong>Plaza de Toros</strong></p>
     <p>Una de las plazas más antiguas de España, con mucho encanto histórico.</p>
-    <a href="https://www.google.com/maps?q=Plaza+de+Toros+Ronda" target="_blank" class="boton-maps">Ver en Google Maps</a>
+    <a href="https://www.google.com/maps?q=Plaza+de+Toros+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
   </div>
   <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
     <p><strong>Alameda de Ronda</strong></p>
     <p>Un parque ideal para pasear y disfrutar de vistas de la ciudad y el Tajo.</p>
-    <a href="https://www.google.com/maps?q=Alameda+de+Ronda" target="_blank" class="boton-maps">Ver en Google Maps</a>
+    <a href="https://www.google.com/maps?q=Alameda+de+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
   </div>
   <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
     <p><strong>Bar El Lechuguita</strong></p>
     <p>Uno de los bares más auténticos de Ronda, ideal para tapas y ambiente local.</p>
-    <a href="https://www.google.com/maps?q=Bar+El+Lechuguita+Ronda" target="_blank" class="boton-maps">Ver en Google Maps</a>
+    <a href="https://www.google.com/maps?q=Bar+El+Lechuguita+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
   </div>
   <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
     <p><strong>Churrería Alba</strong></p>
     <p>Perfecta para probar los churros y dulces típicos de Ronda.</p>
-    <a href="https://www.google.com/maps?q=Churrería+Alba+Ronda" target="_blank" class="boton-maps">Ver en Google Maps</a>
+    <a href="https://www.google.com/maps?q=Churrería+Alba+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
   </div>
 </div>
 </section>
@@ -139,10 +313,10 @@ footer{padding:40px 20px;font-size:0.9em;}
 <p>Si necesitas hacer alguna pregunta o ponerte en contacto con nosotros, aquí tienes nuestros números:</p>
 <div style="margin-top:20px;padding:20px;background:white;max-width:400px;margin-left:auto;margin-right:auto;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.05);text-align:left;font-size:1em;">
 <p><strong>Iñaki Salaberria</strong></p>
-    <a class="boton-whatsapp" href="https://wa.me/34680842493" target="_blank">💬 Escribir por WhatsApp</a>
+<a class="boton-whatsapp" href="https://wa.me/34680842493" target="_blank" rel="noopener noreferrer">💬 Escribir por WhatsApp</a>
 
-    <p style="margin-top:20px;"><strong>Nerea Aizpuru</strong></p>
-    <a class="boton-whatsapp" href="https://wa.me/34697923033" target="_blank">💬 Escribir por WhatsApp</a>
+<p style="margin-top:20px;"><strong>Nerea Aizpuru</strong></p>
+<a class="boton-whatsapp" href="https://wa.me/34697923033" target="_blank" rel="noopener noreferrer">💬 Escribir por WhatsApp</a>
 </div>
 </section>
 
