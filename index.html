@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!-- Open Graph optimizado -->
 
 <meta property="og:title" content=" Acompáñanos a celebrar nuestra boda">
-<meta property="og:description" content="◻️◻️ABRIR INVITACIÓN◻️◻️">
 <meta property="og:image" content="https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -17,11 +17,13 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nerea & Iñaki">
-<meta name="twitter:description" content="◻️◻️ABRIR INVITACIÓN ◻️◻️">
+<meta name="twitter:description" content="Acompáñanos a celebrar nuestra boda">
 <meta name="twitter:image" content="https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4">
 
-<meta name="description" content="◻️◻️ABRIR INVITACIÓN◻️◻️">
+<meta name="description" content="Acompáñanos a celebrar nuestra boda">
 <link rel="canonical" href="https://inakiynerea.github.io/boda/">
+
+<link rel="preload" as="image" href="https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4">
 
 
 <!-- SEO -->
@@ -328,9 +330,55 @@ h2{
     height:20px;
     stroke:#000000;
 }
+/* Ajustes específicos para orientación horizontal */
+@media (orientation: landscape) {
+    /* Pantalla inicial */
+    #pantalla-inicial {
+        flex-direction: row; /* Coloca texto y botón lado a lado si hay espacio */
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+    }
+    #pantalla-inicial p {
+        font-size: 1.5em; /* Texto un poco más grande */
+    }
+    .boton-inicial {
+        padding: 20px 35px; /* Ajusta tamaño del botón */
+        font-size: 1.2em;
+    }
+
+    /* Secciones de invitación */
+    section {
+        padding: 40px 10px; /* Más compacto horizontalmente */
+    }
+
+    /* Imágenes grandes (foto invitación, programas) */
+    #foto-invitacion,
+    section img {
+        max-width: 60%; /* Evita que las imágenes ocupen demasiado ancho */
+        height: auto;
+    }
+
+    /* Ubicación: imagen + mapas lado a lado */
+    .ubicacion-img {
+        flex-direction: row; /* Elementos en línea horizontal */
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .ceremonia, .celebracion {
+        width: 45%; /* Cada bloque ocupa menos ancho */
+    }
+
+    /* Tarjetas de planes imprescindibles */
+    #invitation + section div[style*="display:flex"] {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
 </style>
-<link rel="preload" as="image" href="https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4">
-</style>
+
 </head>
 
 <body>
