@@ -6,6 +6,7 @@
 
 <!-- Open Graph optimizado para WhatsApp sin título visible -->
 <meta property="og:title" content="">
+<meta property="og:title" content="Nerea & Iñaki">
 <meta property="og:description" content="PULSA PARA VER LA INVITACIÓN">
 <meta property="og:image" content="https://raw.githubusercontent.com/InakiyNerea/INVITACION-BODA/main/ronda-portada.jpg">
 <meta property="og:image:width" content="1200">
@@ -63,7 +64,7 @@ p{margin:5px;}
 
 /* Botón abrir invitación */
 .boton-inicial{
-    margin-top:40px;
+    margin-top:60px;
     padding:12px 25px;
     border-radius:30px;
     border:1px solid #fff;
@@ -110,6 +111,22 @@ p{margin:5px;}
 .boton:hover,.boton-maps:hover,.boton-whatsapp:hover,.boton-copiar:hover{
     background:#000;
     color:#fff;
+}
+/* Quitar recuadro gris al pulsar */
+.boton-maps:focus,
+.boton-maps:active {
+    outline: none;
+    box-shadow: none;
+    background: #fff;
+    color: #000;
+}
+.boton-maps {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-focus-ring-color: transparent;
+}
+/* Extra para móviles Android */
+a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* SECCIONES INVITACIÓN */
@@ -295,6 +312,7 @@ h2{
     stroke:#000000;
 }
 </style>
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/BodaIyN/IyN/main/ronda-portada.jpg">
 </head>
 <body>
 
@@ -356,7 +374,7 @@ h2{
   <p><strong>Puente Nuevo</strong></p>
 <p>El icono más famoso de Ronda, perfecto para fotos impresionantes.</p>
 <a  href="https://www.google.com/maps/place/El+Tajo+de+Ronda,+C.+Armi%C3%B1%C3%A1n,+3,+29400+Ronda,+M%C3%A1laga/@36.7406982,-5.165843,15z/data=!4m6!3m5!1s0xd0d3138c61c2951:0x8d3fc263e952b0dd!8m2!3d36.7406982!4d-5.165843!16s%2Fg%2F11g9vz8mjm?utm_campaign=ml-ardl-aht_2026&g_ep=Eg1tbF8yMDI2MDIxNl8wIJvbDyoASAJQAQ%3D%3D" 
-   target="_blank" 
+   target=”_blank” rel=”noopener noreferrer”
    rel="noopener noreferrer" 
    class="boton-maps">
    Ver en Google Maps
@@ -366,15 +384,12 @@ h2{
  <p><strong>Casa del Rey Moro</strong></p>
     <p>La Casa del Rey Moro con la Mina de Agua de época musulmana, la Casa de estilo Neomudéjar y el Jardín diseñado por Forestier.</p>
 <a  href="https://www.google.com/maps/place/Casa+del+Rey+Moro,+C.+Cta.+de+Santo+Domingo,+9,+29400+Ronda,+M%C3%A1laga/@36.739841,-5.164358,15z/data=!4m6!3m5!1s0xd0d313f52395cc3:0xcd26a8d25ead3ffb!8m2!3d36.739841!4d-5.164358!16s%2Fg%2F120hthd8?utm_campaign=ml-ardl-aht_2026&g_ep=Eg1tbF8yMDI2MDIxNl8wIOC7DCoASAJQAQ%3D%3D"
-   target="_blank"
-   rel="noopener noreferrer"
+  target="_blank" rel="noopener noreferrer"
    class="boton-maps">
    Ver en Google Maps
 </a>
 </div>
-
 <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
-
     <p><strong>Plaza de Toros</strong></p>
     <p>Una de las plazas más antiguas de España, con mucho encanto histórico.</p>
     <a href="https://www.google.com/maps?q=Plaza+de+Toros+Ronda" target="_blank" rel="noopener noreferrer" class="boton-maps">Ver en Google Maps</a>
@@ -411,8 +426,8 @@ h2{
 
 <!-- Botones debajo de los nombres -->
 <div style="display:flex; justify-content:space-around; flex-wrap:wrap; gap:10px;">
-  <a class="boton-whatsapp" href="https://wa.me/34680842493" target="_blank">💬 WhatsApp</a>
-  <a class="boton-whatsapp" href="https://wa.me/34697923033" target="_blank">💬 WhatsApp</a>
+  <a class="boton-whatsapp" href="https://wa.me/34680842493" target="_blank"rel="noopener noreferrer">💬 WhatsApp</a>
+  <a class="boton-whatsapp" href="https://wa.me/34697923033" target="_blank"derel="noopener noreferrer">💬 WhatsApp</a>
 </div>
 
   </div>
@@ -497,4 +512,7 @@ function copiarIBAN() {
         }, 2000);
     });
 }
-            </script>
+</script>
+
+
+                                
