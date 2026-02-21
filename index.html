@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Open Graph optimizado -->
 
-<!-- Open Graph optimizado para WhatsApp sin título visible -->
-<<meta property="og:title" content="Acompáñanos a celebrar nuestra boda">
+<meta property="og:title" content=" Acompáñanos a celebrar nuestra boda">
 <meta property="og:description" content="◻️◻️ABRIR INVITACIÓN◻️◻️">
-<meta property="og:image" content="https://raw.githubusercontent.com/InakiyNerea/boda/main/ronda-portada.jpg">
+<meta property="og:image" content="https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://inakiynerea.github.io/boda/">
@@ -16,16 +17,24 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nerea & Iñaki">
-<meta property="og:description" content="◻️◻️ABRIR INVITACIÓN◻️◻️">
-<meta name="twitter:image" content="https://bodaiyn.github.io/IyN/ronda-portada.jpg">
+<meta name="twitter:description" content="◻️◻️ABRIR INVITACIÓN ◻️◻️">
+<meta name="twitter:image" content="https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4">
 
-<meta property="og:description" content="◻️◻️ABRIR INVITACIÓN◻️◻️">
-<link rel="canonical" href="https://bodaiyn.github.io/IyN/">
+<meta name="description" content="◻️◻️ABRIR INVITACIÓN◻️◻️">
+<link rel="canonical" href="https://inakiynerea.github.io/boda/">
+
+
+<!-- SEO -->
+<meta name="description" content="Acompáñanos a celebrar nuestra boda en Ronda.">
+<link rel="canonical" href="https://inakiynerea.github.io/boda/">
+
 
 <!-- Fuentes -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@400;600&family=Italianno&display=swap" rel="stylesheet">
+
+<!-- Estilos -->
 
 <style>
 /* GLOBAL */
@@ -42,7 +51,7 @@ p{margin:5px;}
 #pantalla-inicial{
     position:fixed;
     inset:0;
-    background:url("https://raw.githubusercontent.com/BodaIyN/IyN/main/ronda-portada.jpg") no-repeat center top;
+    background:url("https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4") no-repeat center top;
     background-size:cover;
     display:flex;
     flex-direction:column;
@@ -61,25 +70,35 @@ p{margin:5px;}
 }
 
 /* Botón abrir invitación */
-.boton-inicial{
-    margin-top:60vh;
-    padding:12px 25px;
-    border-radius:30px;
-    border:1px solid #fff;
-    background:transparent;
-    color:#fff;
-    font-weight:600;
-    text-decoration:none;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    transition:0.3s;
-    animation:vibrar 1s infinite;
+.boton-inicial {
+    border-radius: 30px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    animation: vibrar 1s infinite;
+
+    /* Padding principal para escritorio */
+    padding: 25px 40px; /* Arriba/abajo 25px, izquierda/derecha 40px */
+    font-size: 1.2em;
 }
 
-.boton-inicial:hover{
-    background:#fff;
-    color:#000;
+.boton-inicial:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    .boton-inicial {
+        padding: 15px 25px; /* más compacto en móviles */
+        font-size: 1em;
+    }
 }
 
 @keyframes vibrar{
@@ -310,8 +329,10 @@ h2{
     stroke:#000000;
 }
 </style>
-<link rel="preload" as="image" href="https://raw.githubusercontent.com/BodaIyN/IyN/main/ronda-portada.jpg">
+<link rel="preload" as="image" href="https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4">
+</style>
 </head>
+
 <body>
 
 <!-- PANTALLA INICIAL -->
@@ -330,7 +351,7 @@ h2{
         <div class="caja"><strong id="m">0</strong>MINUTOS</div>
         <div class="caja"><strong id="s">0</strong>SEGUNDOS</div>
     </div>
-    <img id="foto-invitacion" src="foto1.jpg" alt="Foto invitación" loading="lazy">
+<img id="foto-invitacion" src="https://inakiynerea.github.io/boda/foto1.jpg" alt="Foto invitación" loading="lazy">
 </section>
 
 <!-- SECCIONES: PROGRAMA, CONFIRMA, UBICACIÓN, PLANES, CONTACTO, REGALO -->
