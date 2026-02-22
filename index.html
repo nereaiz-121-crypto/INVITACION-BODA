@@ -61,11 +61,11 @@ p{margin:5px;}
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* centra verticalmente todo */
+    justify-content: flex-start; /* todo al inicio verticalmente */
+    padding-top: 30vh; /* espacio desde arriba, ajustable */
     text-align: center;
     z-index: 9999;
     transition: opacity 1s;
-    padding: 0 20px; /* padding horizontal para móviles */
 }
 
 #pantalla-inicial p {
@@ -73,7 +73,7 @@ p{margin:5px;}
     font-weight: 600;
     letter-spacing: 2px;
     font-size: 1.2em;
-    margin-bottom: 30px; /* separa el texto del botón */
+    margin-bottom: 40px; /* separa el texto del botón */
 }
 
 /* Botón abrir invitación */
@@ -93,6 +93,9 @@ p{margin:5px;}
     /* Padding y tamaño */
     padding: 25px 40px;
     font-size: 1.2em;
+
+    /* NUEVO: posición más abajo */
+    margin-top: 25vh; /* ajusta hasta que quede visualmente perfecto */
 }
 
 .boton-inicial:hover {
@@ -103,16 +106,14 @@ p{margin:5px;}
 /* Responsive para móviles */
 @media (max-width: 480px) {
     #pantalla-inicial {
-        padding: 0 10px; /* menos padding horizontal */
-    }
-    #pantalla-inicial p {
-        font-size: 1em;
-        margin-bottom: 20px;
+        padding-top: 20vh; /* menos espacio arriba en móviles */
     }
     .boton-inicial {
         padding: 15px 25px;
         font-size: 1em;
+        margin-top: 20vh; /* ajusta la posición del botón en móviles */
     }
+
 @keyframes vibrar{
     0%,100%{transform:translateY(0);}
     25%{transform:translateY(-3px);}
