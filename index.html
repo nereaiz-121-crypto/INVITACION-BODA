@@ -53,25 +53,27 @@ body{
 p{margin:5px;}
 
 /* PANTALLA INICIAL */
-#pantalla-inicial{
-    position:fixed;
-    inset:0;
-    background:url("https://inakiynerea.github.io/boda/ronda-portada.jpg") no-repeat center top;
-    background-size:cover;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    z-index:9999;
-    transition:opacity 1s;
+#pantalla-inicial {
+    position: fixed;
+    inset: 0;
+    background: url("https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4") no-repeat center top;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* todo al inicio verticalmente */
+    padding-top: 20vh; /* espacio desde arriba, ajustable */
+    text-align: center;
+    z-index: 9999;
+    transition: opacity 1s;
 }
 
-#pantalla-inicial p{
-    color:#fff;
-    font-weight:600;
-    letter-spacing:2px;
-    font-size:1.2em;
+#pantalla-inicial p {
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 1.2em;
+    margin-bottom: 40px; /* separa el texto del botón */
 }
 
 /* Botón abrir invitación */
@@ -82,19 +84,18 @@ p{margin:5px;}
     color: #fff;
     font-weight: 600;
     text-decoration: none;
-    #pantalla-inicial {
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-end; /* coloca todo al final verticalmente */
-    padding-bottom: 100px; /* espacio desde el borde inferior */
-}
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: 0.3s;
     animation: vibrar 1s infinite;
 
-    /* Padding principal para escritorio */
-    padding: 25px 40px; /* Arriba/abajo 25px, izquierda/derecha 40px */
+    /* Padding y tamaño */
+    padding: 25px 40px;
     font-size: 1.2em;
+
+    /* NUEVO: posición más abajo */
+    margin-top: 20vh; /* ajusta hasta que quede visualmente perfecto */
 }
 
 .boton-inicial:hover {
@@ -104,11 +105,14 @@ p{margin:5px;}
 
 /* Responsive para móviles */
 @media (max-width: 480px) {
-    .boton-inicial {
-        padding: 15px 25px; /* más compacto en móviles */
-        font-size: 1em;
+    #pantalla-inicial {
+        padding-top: 10vh; /* menos espacio arriba en móviles */
     }
-}
+    .boton-inicial {
+        padding: 15px 25px;
+        font-size: 1em;
+        margin-top: 25vh; /* ajusta la posición del botón en móviles */
+    }
 
 @keyframes vibrar{
     0%,100%{transform:translateY(0);}
