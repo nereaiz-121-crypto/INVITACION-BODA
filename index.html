@@ -332,9 +332,7 @@ setInterval(function(){
   }
   document.getElementById("d").innerText=Math.floor(diff/(1000*60*60*24));
   document.getElementById("h").innerText=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-  document.getElementById("m").innerText=Math.floor((diff%(1000*60*60))/(1000*60));
-
-document.getElementById("s").innerText = Math.floor((diff % (1000 * 60)) / 1000);
+  document.getElementById("m").innerText=Math.floor((diff%(1000*60*60))/(1000*60)); document.getElementById("s").innerText=Math.floor((diff%(1000*60))/1000);
 },1000);
 
 // COPIAR IBAN
@@ -349,5 +347,4 @@ function copiarIBAN() {
 }
 </script>
 </body>
-                              </html>
-    
+</html>
