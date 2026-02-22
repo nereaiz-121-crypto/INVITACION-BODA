@@ -47,13 +47,14 @@ p{margin:5px;}
 #pantalla-inicial {
     position: fixed;
     inset: 0;
-    background: url("https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4") no-repeat center top;
+    background: url("https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4") no-repeat center center;
     background-size: cover;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* todo al inicio verticalmente */
-    padding-top: 38vh; /* espacio desde arriba, ajustable */
+    justify-content: center;   /* 👈 CENTRADO REAL */
+
     text-align: center;
     z-index: 9999;
     transition: opacity 1s;
@@ -86,7 +87,7 @@ p{margin:5px;}
     font-size: 1.2em;
 
     /* NUEVO: posición más abajo */
-    margin-top: 35vh; /* ajusta hasta que quede visualmente perfecto */
+    margin-top: 30vh; /* ajusta hasta que quede visualmente perfecto */
 }
 
 .boton-inicial:hover {
@@ -97,12 +98,12 @@ p{margin:5px;}
 /* Responsive para móviles */
 @media (max-width: 480px) {
     #pantalla-inicial {
-        padding-top: 32vh; /* menos espacio arriba en móviles */
+        padding-top: vh; /* menos espacio arriba en móviles */
     }
     .boton-inicial {
         padding: 15px 28px;
         font-size: 1em;
-        margin-top: 25vh; /* ajusta la posición del botón en móviles */
+        margin-top: vh; /* ajusta la posición del botón en móviles */
     }
 }
 @keyframes vibrar{
