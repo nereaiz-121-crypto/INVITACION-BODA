@@ -8,7 +8,7 @@
 
 <meta property="og:title" content="Nerea & Iñaki">
 <meta property="og:title" content=" Acompáñanos a celebrar nuestra boda">
-<meta property="og:image" content="https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4">
+<meta property="og:image" content="https://inakiynerea.github.io/boda/ronda-portada.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,12 +19,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nerea & Iñaki">
 <meta name="twitter:description" content="Acompáñanos a celebrar nuestra boda">
-<meta name="twitter:image" content="https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4">
+<meta name="twitter:image" content="https://inakiynerea.github.io/boda/ronda-portada.jpg">
 
 <meta name="description" content="Acompáñanos a celebrar nuestra boda">
 <link rel="canonical" href="https://inakiynerea.github.io/boda/">
 
-<link rel="preload" as="image" href="https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4">
+<link rel="preload" as="image" href="https://inakiynerea.github.io/boda/ronda-portada.jpg">
 
 
 <!-- SEO -->
@@ -36,6 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@400;600&family=Italianno&display=swap" rel="stylesheet">
+
 <meta name="theme-color" content="#ffffff">
 
 <!-- Estilos -->
@@ -55,7 +56,7 @@ p{margin:5px;}
 #pantalla-inicial{
     position:fixed;
     inset:0;
-    background:url("https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4") no-repeat center top;
+    background:url("https://inakiynerea.github.io/boda/ronda-portada.jpg") no-repeat center top;
     background-size:cover;
     display:flex;
     flex-direction:column;
@@ -81,9 +82,13 @@ p{margin:5px;}
     color: #fff;
     font-weight: 600;
     text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    #pantalla-inicial {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end; /* coloca todo al final verticalmente */
+    padding-bottom: 100px; /* espacio desde el borde inferior */
+}
     transition: 0.3s;
     animation: vibrar 1s infinite;
 
