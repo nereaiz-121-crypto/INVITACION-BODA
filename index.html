@@ -43,28 +43,33 @@ body{
 }
 p{margin:5px;}
 
-/* PANTALLA INICIAL */
+/* =========================
+   PANTALLA INICIAL
+========================= */
+
 #pantalla-inicial {
     position: fixed;
     inset: 0;
-    background: url("https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4") no-repeat center top;
+    background: url("https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4") no-repeat center center;
     background-size: cover;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* todo al inicio verticalmente */
-    padding-top: 38vh; /* espacio desde arriba, ajustable */
+    justify-content: center; /* CENTRADO REAL */
+
     text-align: center;
     z-index: 9999;
     transition: opacity 1s;
 }
 
+/* Texto superior */
 #pantalla-inicial p {
     color: #fff;
     font-weight: 600;
     letter-spacing: 2px;
     font-size: 1.2em;
-    margin-bottom: 40px; /* separa el texto del botón */
+    margin-bottom: 30px;
 }
 
 /* Botón abrir invitación */
@@ -75,18 +80,17 @@ p{margin:5px;}
     color: #fff;
     font-weight: 600;
     text-decoration: none;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
+    padding: 18px 35px;
+    font-size: 1.1em;
+
+    margin-top: 10px; /* separación natural */
     transition: 0.3s;
     animation: vibrar 1s infinite;
-
-    /* Padding y tamaño */
-    padding: 25px 40px;
-    font-size: 1.2em;
-
-    /* NUEVO: posición más abajo */
-    margin-top: 35vh; /* ajusta hasta que quede visualmente perfecto */
 }
 
 .boton-inicial:hover {
@@ -94,24 +98,25 @@ p{margin:5px;}
     color: #000;
 }
 
-/* Responsive para móviles */
+/* Responsive móvil */
 @media (max-width: 480px) {
-    #pantalla-inicial {
-        padding-top: 32vh; /* menos espacio arriba en móviles */
-    }
-    .boton-inicial {
-        padding: 15px 28px;
+    #pantalla-inicial p {
         font-size: 1em;
-        margin-top: 25vh; /* ajusta la posición del botón en móviles */
+    }
+
+    .boton-inicial {
+        padding: 14px 25px;
+        font-size: 1em;
     }
 }
+
+/* Animación */
 @keyframes vibrar{
     0%,100%{transform:translateY(0);}
     25%{transform:translateY(-3px);}
     50%{transform:translateY(2px);}
     75%{transform:translateY(-2px);}
 }
-
 /* BOTONES */
 .boton,.boton-maps,.boton-whatsapp,.boton-copiar{
     display:inline-flex;
