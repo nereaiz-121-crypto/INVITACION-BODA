@@ -157,40 +157,7 @@ h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-botto
     .ceremonia, .celebracion{width:45%;}
 }
 
-/* CONTENEDOR CONTACTO */
-.seccion-contacto .caja-contacto {
-    margin: 0 auto;
-    padding: 15px;
-    max-width: 320px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    text-align: center;
-}
 
-.seccion-contacto .caja-contacto .nombres {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.seccion-contacto .caja-contacto .botones {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-/* CONTENEDOR REGALO */
-.caja-regalo {
-    margin: 0 auto;
-    padding: 15px;
-    max-width: 320px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-}
 </style>
 </head>
 <body>
@@ -311,15 +278,15 @@ referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
 
 <!-- CONTACTO -->
-<section class="seccion-contacto">
+<section>
     <h2>CONTACTO</h2>
     <p>Si necesitas hacer alguna pregunta o ponerte en contacto con nosotros, escríbenos a nuestros números:</p>
-    <div class="caja-contacto">
-        <div class="nombres">
+    <div style="margin-top:20px;padding:20px;background:white;max-width:400px;margin:auto;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.05);text-align:center;">
+        <div style="display:flex;justify-content:space-around;flex-wrap:wrap;gap:10px;margin-bottom:15px;">
             <strong>Iñaki Salaberria</strong>
             <strong>Nerea Aizpuru</strong>
         </div>
-        <div class="botones">
+        <div style="display:flex;justify-content:space-around;flex-wrap:wrap;gap:10px;">
             <a class="boton-whatsapp" href="https://wa.me/34680842493" target="_blank" rel="noopener">💬 WhatsApp</a>
             <a class="boton-whatsapp" href="https://wa.me/34697923033" target="_blank" rel="noopener">💬 WhatsApp</a>
         </div>
@@ -341,6 +308,13 @@ referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <footer>Con mucho cariño, os esperamos</footer>
 </section>
+
+<div class="flecha-scroll" id="flecha" onclick="scrollAbajo()">
+<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<line x1="12" y1="5" x2="12" y2="19"></line>
+<polyline points="19 12 12 19 5 12"></polyline>
+</svg>
+</div>
 
 <script defer>
 // ABRIR INVITACIÓN
@@ -401,4 +375,4 @@ function copiarIBAN() {
     
 
 
-            
+    
