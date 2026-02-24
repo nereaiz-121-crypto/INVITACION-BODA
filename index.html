@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!-- Título y descripción para buscadores -->
 <title>Tito Juan</title>
 <meta name="description" content="Te invitamos a celebrar nuestra boda. Descubre todos los detalles de nuestro gran día.">
@@ -12,6 +13,7 @@
 <meta property="og:description" content="Te invitamos a celebrar nuestra boda. Descubre todos los detalles de nuestro gran día.">
 <meta property="og:image" content="https://inakiynerea.github.io/boda/ronda-portada.jpg">
 <meta property="og:url" content="https://inakiynerea.github.io/boda/">
+
 <!-- Fuentes -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +23,19 @@
 
 <style>
 /* GLOBAL */
-body{margin:0;font-family:'Cormorant Garamond', serif;background:#fff;color:#000;text-align:center;}
-p{margin:5px;}
+body{
+    margin:0;
+    font-family:'Cormorant Garamond', serif;
+    background:#fff;
+    color:#000;
+    text-align:center;
+}
+p{
+    margin:5px;
+}
+a{
+    -webkit-tap-highlight-color: transparent;
+}
 
 /* PANTALLA INICIAL */
 #pantalla-inicial{
@@ -38,16 +51,14 @@ p{margin:5px;}
     z-index:9999;
     transition:opacity 1s;
 }
-
 #pantalla-inicial p{
     color:#fff;
     font-weight:600;
     letter-spacing:2px;
     font-size:1.2em;
     margin-bottom:20px;
-    margin-top:-80px;   /* 👈 lo sube hacia arriba */
+    margin-top:-80px;
 }
-
 .boton-inicial{
     border-radius:30px;
     border:1px solid #fff;
@@ -82,14 +93,17 @@ p{margin:5px;}
     transition:0.3s;
     outline:none;
 }
-.boton:hover, .boton-maps:hover, .boton-whatsapp:hover, .boton-copiar:hover{background:#000;color:#fff;}
-.boton-maps:focus, .boton-maps:active{outline:none;box-shadow:none;background:#fff;color:#000;}
-a{-webkit-tap-highlight-color: transparent;}
+.boton:hover, .boton-maps:hover, .boton-whatsapp:hover, .boton-copiar:hover{
+    background:#000;
+    color:#fff;
 }
-/* Extra para móviles Android */
-a {
-    -webkit-tap-highlight-color: transparent;
+.boton-maps:focus, .boton-maps:active{
+    outline:none;
+    box-shadow:none;
+    background:#fff;
+    color:#000;
 }
+
 /* SECCIONES INVITACIÓN */
 section{
     padding:50px 20px;
@@ -102,32 +116,112 @@ section{
     box-shadow:0 4px 12px rgba(0,0,0,0.05);
     max-width:900px;
 }
-section.visible{opacity:1;transform:translateY(0);}
-
-h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-bottom:20px;letter-spacing:2px;font-size:1.6em;}
-.iniciales{font-size:3em;font-family:'Playfair Display', serif;letter-spacing:10px;margin-bottom:10px;color:#000;}
+section.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+h2{
+    text-transform:uppercase;
+    font-family:'Cormorant Garamond', serif;
+    margin-bottom:20px;
+    letter-spacing:2px;
+    font-size:1.6em;
+}
+.iniciales{
+    font-size:3em;
+    font-family:'Playfair Display', serif;
+    letter-spacing:10px;
+    margin-bottom:10px;
+    color:#000;
+}
 .separador{font-size:2em;margin:0 10px;}
 #fecha-inicial{font-weight:500;margin-bottom:20px;}
-.cuenta-atras{display:flex;justify-content:center;gap:15px;margin-top:25px;flex-wrap:wrap;}
-.caja{min-width:60px;background:rgba(255,255,255,0.9);padding:12px 8px;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+.cuenta-atras{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:25px;
+    flex-wrap:wrap;
+}
+.caja{
+    min-width:60px;
+    background:rgba(255,255,255,0.9);
+    padding:12px 8px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    word-break: break-word;
+}
 .caja strong{font-size:1.5em;display:block;}
-#foto-invitacion{max-width:90%;border-radius:10px;margin-top:25px;}
+#foto-invitacion{
+    max-width:90%;
+    border-radius:10px;
+    margin-top:25px;
+}
 
 /* SECCIÓN REGALO */
 .regalo{text-align:center;padding:60px 20px;}
 .texto-regalo{max-width:600px;margin:0 auto 30px auto;}
-.caja-regalo{margin:0 auto;padding:25px;background:white;max-width:400px;border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,0.05);}
+.caja-regalo{
+    margin:0 auto;
+    padding:25px;
+    background:white;
+    max-width:400px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.05);
+    word-break: break-word;
+}
 .titulo-iban{font-weight:600;letter-spacing:2px;margin-bottom:10px;}
-.iban{font-family:Arial,sans-serif;font-weight:400;color:#000;text-decoration:none;font-size:1em;letter-spacing:1px;text-align:center;overflow-x:auto;white-space:nowrap;}
+.iban{
+    font-family:Arial,sans-serif;
+    font-weight:400;
+    color:#000;
+    text-decoration:none;
+    font-size:1em;
+    letter-spacing:1px;
+    text-align:center;
+    overflow-x:auto;
+    white-space:nowrap;
+}
 .gracias{font-size:0.85em;color:#777;}
-.regalo footer{margin-top:30px;font-size:1em;color:#555;font-style:italic;text-align:center;}
+.regalo footer{
+    margin-top:30px;
+    font-size:1em;
+    color:#555;
+    font-style:italic;
+    text-align:center;
+}
 
 /* FLECHA SCROLL */
-.flecha-scroll{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);width:45px;height:45px;border-radius:50%;background-color:rgba(0,0,0,0.1);cursor:pointer;z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.5s;}
-.flecha-scroll svg{width:20px;height:20px;stroke:#000;}
+.flecha-scroll{
+    position:fixed;
+    left:50%;
+    bottom:20px;
+    transform:translateX(-50%);
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background-color:rgba(0,0,0,0.1);
+    cursor:pointer;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transition:opacity 0.5s;
+}
+.flecha-scroll svg{
+    width:20px;
+    height:20px;
+    stroke:#000;
+}
 
 /* ANIMACIONES */
-@keyframes vibrar{0%,100%{transform:translateY(0);}25%{transform:translateY(-3px);}50%{transform:translateY(2px);}75%{transform:translateY(-2px);}}
+@keyframes vibrar{
+    0%,100%{transform:translateY(0);}
+    25%{transform:translateY(-3px);}
+    50%{transform:translateY(2px);}
+    75%{transform:translateY(-2px);}
+}
 
 /* RESPONSIVE */
 @media(max-width:480px){
@@ -142,7 +236,12 @@ h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-botto
 }
 
 /* UBICACIÓN CENTRADA */
-.ubicacion-img, .ceremonia, .celebracion{display:flex;flex-direction:column;align-items:center;text-align:center;}
+.ubicacion-img, .ceremonia, .celebracion{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
 @media (orientation: landscape){
     #pantalla-inicial{flex-direction:row;justify-content:space-around;align-items:center;padding:20px;}
     #pantalla-inicial p{font-size:1.5em;}
@@ -159,7 +258,7 @@ h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-botto
 <!-- PANTALLA INICIAL -->
 <div id="pantalla-inicial">
     <p>¡EL DÍA SE ACERCA!</p>
-    <a href="#" class="boton-inicial" onclick="abrirInvitacion(event)">ABRIR INVITACIÓN</a>
+    <a href="#" class="boton-inicial" role="button" onclick="abrirInvitacion(event)">ABRIR INVITACIÓN</a>
 </div>
 
 <main id="invitation">
@@ -200,12 +299,12 @@ h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-botto
         <div class="ceremonia">
             <h3>Ceremonia</h3>
             <p>Iglesia de Padre Jesús<br>C/ Real, 13<br>Ronda, Málaga</p>
-            <iframe title="Ubicación Iglesia de Padre Jesús" src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="250" style="border:0;border-radius:10px;margin-top:10px;" loading="lazy"></iframe>
+            <iframe title="Ubicación Iglesia de Padre Jesús, Ronda" src="https://www.google.com/maps?q=Iglesia+de+Padre+Jesus+Ronda&output=embed" width="100%" height="250" style="border:0;border-radius:10px;margin-top:10px;" loading="lazy"></iframe>
         </div>
         <div class="celebracion" style="margin-top:15px;">
             <h3>Celebración</h3>
             <p>Heredad Los Alba<br>Carretera Algeciras, Ronda</p>
-            <iframe title="Ubicación Heredad Los Alba" src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" width="100%" height="250" style="border:0;border-radius:10px;margin-top:10px;" loading="lazy"></iframe>
+            <iframe title="Ubicación Heredad Los Alba, Ronda" src="https://www.google.com/maps?q=Heredad+Los+Alba+Ronda&output=embed" width="100%" height="250" style="border:0;border-radius:10px;margin-top:10px;" loading="lazy"></iframe>
         </div>
     </div>
 </section>
@@ -220,16 +319,11 @@ h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-botto
         <p>El icono más famoso de Ronda, perfecto para fotos impresionantes.</p>
         <a href="https://www.google.com/maps?q=El+Tajo+de+Ronda" target="_blank" class="boton-maps">Ver en Google Maps</a>
       </div>
-   <p><strong>Casa del Rey Moro</strong></p>
-    <p>La Casa del Rey Moro con la Mina de Agua y el Jardín de Forestier</p>
-<a  href="https://www.google.com/maps/place/Casa+del+Rey+Moro,+C.+Cta.+de+Santo+Domingo,+9,+29400+Ronda,+M%C3%A1laga/@36.739841,-5.164358,15z/data=!4m6!3m5!1s0xd0d313f52395cc3:0xcd26a8d25ead3ffb!8m2!3d36.739841!4d-5.164358!16s%2Fg%2F120hthd8?utm_campaign=ml-ardl-aht_2026&g_ep=Eg1tbF8yMDI2MDIxNl8wIOC7DCoASAJQAQ%3D%3D"
-  target="_blank" rel="noopener noreferrer"
-   class="boton-maps">
-   Ver en Google Maps
-</a>
-</div>
-<div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
-  </div>
+      <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
+        <p><strong>Casa del Rey Moro</strong></p>
+        <p>La Casa del Rey Moro con la Mina de Agua y el Jardín de Forestier</p>
+        <a href="https://www.google.com/maps/place/Casa+del+Rey+Moro,+Ronda" target="_blank" class="boton-maps">Ver en Google Maps</a>
+      </div>
       <div style="background:white; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); width:250px; padding:20px;">
         <p><strong>Plaza de Toros</strong></p>
         <p>Una de las plazas más antiguas de España, con mucho encanto histórico.</p>
@@ -278,13 +372,14 @@ h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-botto
     </p>
     <div class="caja-regalo">
         <p class="titulo-iban">IBAN</p>
-        <p class="iban" id="ibanTexto">ES00 0000 0000 0000 0000 0000</p>
+        <p class="iban" id="ibanTexto">ES00 0000 0000 00000000 0000</p>
         <button class="boton-copiar" onclick="copiarIBAN()">Copiar IBAN</button>
         <p class="gracias" id="Copiado"></p>
     </div>
     <footer>Con mucho cariño, os esperamos</footer>
 </section>
 
+<!-- FLECHA SCROLL -->
 <div class="flecha-scroll" id="flecha" onclick="scrollAbajo()">
 <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 <line x1="12" y1="5" x2="12" y2="19"></line>
@@ -330,7 +425,8 @@ setInterval(function(){
   }
   document.getElementById("d").innerText=Math.floor(diff/(1000*60*60*24));
   document.getElementById("h").innerText=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-  document.getElementById("m").innerText=Math.floor((diff%(1000*60*60))/(1000*60)); document.getElementById("s").innerText=Math.floor((diff%(1000*60))/1000);
+  document.getElementById("m").innerText=Math.floor((diff%(1000*60*60))/(1000*60)); 
+  document.getElementById("s").innerText=Math.floor((diff%(1000*60))/1000);
 },1000);
 
 // COPIAR IBAN
@@ -346,7 +442,4 @@ function copiarIBAN() {
 </script>
 </body>
     </html>
-
-
-
-        
+    
