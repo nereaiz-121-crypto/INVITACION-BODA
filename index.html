@@ -4,20 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Título y descripción para buscadores -->
 <title>Tito Juan</title>
 <meta name="description" content="Te invitamos a celebrar nuestra boda. Descubre todos los detalles de nuestro gran día.">
 
-<!-- Open Graph para previsualización en WhatsApp y redes sociales -->
 <meta property="og:title" content="Tito Juan">
 <meta property="og:description" content="Te invitamos a celebrar nuestra boda. Descubre todos los detalles de nuestro gran día.">
-
 <meta property="og:image" content="https://inakiynerea.github.io/boda/ronda-portada.jpg">
 <meta property="og:url" content="https://inakiynerea.github.io/boda/">
-
 <meta property="og:type" content="website">
 
-<!-- Fuentes -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@400;600&family=Italianno&display=swap" rel="stylesheet">
@@ -50,7 +45,7 @@ p{margin:5px;}
     letter-spacing:2px;
     font-size:1.2em;
     margin-bottom:20px;
-    margin-top:-80px;   /* 👈 lo sube hacia arriba */
+    margin-top:-80px;
 }
 
 .boton-inicial{
@@ -72,9 +67,8 @@ p{margin:5px;}
 .boton-inicial:hover{background:#fff;color:#000;}
 
 /* ============================= */
-/* BOTONES GENERALES */
+/* BOTONES GENERALES OPTIMIZADOS */
 /* ============================= */
-
 .boton,
 .boton-maps,
 .boton-whatsapp,
@@ -126,20 +120,15 @@ p{margin:5px;}
 a,
 a:focus,
 a:active {
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    outline: none;
-} 
-
-/* Eliminar resaltado en todos los enlaces en Android */
-a, a:focus, a:active {
-    outline: none !important;
-    box-shadow: none !important;
     -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+    outline: none !important;
 }
-/* Extra para móviles Android */
-a {
-    -webkit-tap-highlight-color: transparent;
+
+/* Extra: eliminar menú emergente en iOS */
+* {
+    -webkit-touch-callout: none;
 }
+
 /* SECCIONES INVITACIÓN */
 section{
     padding:50px 20px;
@@ -205,7 +194,6 @@ h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-botto
 </style>
 </head>
 <body>
-
 <!-- PANTALLA INICIAL -->
 <div id="pantalla-inicial">
     <p>¡EL DÍA SE ACERCA!</p>
@@ -432,4 +420,4 @@ function copiarIBAN() {
         
 
 
-            
+                                                        
