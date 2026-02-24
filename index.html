@@ -71,37 +71,64 @@ p{margin:5px;}
 }
 .boton-inicial:hover{background:#fff;color:#000;}
 
-/* BOTONES */
-.boton, .boton-maps, .boton-whatsapp, .boton-copiar{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    margin-top:10px;
-    padding:10px 20px;
-    border-radius:30px;
-    border:1px solid #000;
-    background:#fff;
-    color:#000;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
-    outline:none;
-}
-.boton:hover, .boton-maps:hover, .boton-whatsapp:hover, .boton-copiar:hover{background:#000;color:#fff;}
-.boton-maps:focus, .boton-maps:active{outline:none;box-shadow:none;background:#fff;color:#000;}
-a{-webkit-tap-highlight-color: transparent;
-}
-/* Quitar completamente destello gris en móviles */
+/* ============================= */
+/* BOTONES GENERALES */
+/* ============================= */
+
+.boton,
 .boton-maps,
+.boton-whatsapp,
+.boton-copiar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease;
+    outline: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Hover solo en escritorio */
+@media (hover: hover) {
+    .boton:hover,
+    .boton-maps:hover,
+    .boton-whatsapp:hover,
+    .boton-copiar:hover {
+        background: #000;
+        color: #fff;
+    }
+}
+
+/* Eliminar efecto gris al pulsar en móvil */
+.boton:focus,
+.boton:active,
 .boton-maps:focus,
 .boton-maps:active,
-.boton-maps:visited {
+.boton-whatsapp:focus,
+.boton-whatsapp:active,
+.boton-copiar:focus,
+.boton-copiar:active {
     outline: none !important;
     box-shadow: none !important;
     background: #fff !important;
     color: #000 !important;
-    -webkit-tap-highlight-color: transparent !important;
 }
+
+/* Quitar resaltado gris global en Android */
+a,
+a:focus,
+a:active {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline: none;
+} 
 
 /* Eliminar resaltado en todos los enlaces en Android */
 a, a:focus, a:active {
@@ -402,5 +429,7 @@ function copiarIBAN() {
 
 
 
+        
 
-    
+
+            
