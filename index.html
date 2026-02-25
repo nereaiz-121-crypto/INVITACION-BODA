@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Nerea e Iñaki</title>
-<meta name="description" content="Abre este enlace para descubrir todos los detalles de nuestro gran día.">
+<meta name="description" content="Te invitamos a celebrar nuestra boda. Abre este enlace para descubrir todos los detalles de nuestro gran día.">
 
 <meta property="og:title" content="Nerea e Iñaki">
 <meta property="og:description" content="Abre este enlace para descubrir todos los detalles de nuestro gran día.">
 <meta property="og:image" content="https://inakiynerea.github.io/boda/ronda-portada.jpg">
 <meta property="og:url" content="https://inakiynerea.github.io/boda/">
 <meta property="og:type" content="website">
-
+<meta name="format-detection" content="telephone=no">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@400;600&family=Italianno&display=swap" rel="stylesheet">
@@ -158,7 +158,7 @@ h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-botto
 .texto-regalo{max-width:600px;margin:0 auto 30px auto;}
 .caja-regalo{margin:0 auto;padding:25px;background:white;max-width:400px;border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,0.05);}
 .titulo-iban{font-weight:600;letter-spacing:2px;margin-bottom:10px;}
-.iban{font-family:Arial,sans-serif;font-weight:400;color:#000;text-decoration:none;font-size:1em;letter-spacing:1px;text-align:center;overflow-x:auto;white-space:nowrap;}
+.iban{font-family:Arial,sans-serif;font-weight:700;color:#000 !important;text-decoration:none !important;font-size:1em;letter-spacing:1px;text-align:center;overflow-x:auto;white-space:nowrap;}
 .gracias{font-size:0.85em;color:#777;}
 .regalo footer{margin-top:30px;font-size:1em;color:#555;font-style:italic;text-align:center;}
 
@@ -346,41 +346,97 @@ h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-botto
         podéis ayudarnos a comenzar esta nueva etapa.
     </p>
     <div class="caja-regalo">
-        <!-- Beneficiario -->
-        <p class="titulo-iban">BENEFICIARIO</p>
-        <p class="iban" id="beneficiarioTexto">Nerea e Iñaki</p>
-        <button class="boton-copiar" onclick="copiarBeneficiario()">Copiar Beneficiario</button>
-        <p class="gracias" id="CopiadoBeneficiario"></p>
-
         <!-- IBAN -->
-        <p class="titulo-iban" style="margin-top:20px;">IBAN</p>
-        <p class="iban" id="ibanTexto">ES00 0000 0000 0000 0000 0000</p>
-        <button class="boton-copiar" onclick="copiarIBAN()">Copiar IBAN</button>
-        <p class="gracias" id="Copiado"></p>
+        <p class="titulo-iban">IBAN</p>
+        <p class="iban" id="ibanTexto">ES33 1583 0001 1891 8952 4373</p>
+
+        <!-- BENEFICIARIO -->
+        <p class="titulo-iban" style="margin-top:20px;">BENEFICIARIO</p>
+        <p class="iban" id="beneficiarioTexto">N Aizpuru Ortega I Salaberria Garcia</p>
+
+        <!-- BOTONES ALINEADOS -->
+        <div style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-top:15px;">
+            <button class="boton-copiar" onclick="copiarIBAN()">Copiar IBAN</button>
+            <button class="boton-copiar" onclick="copiarBeneficiario()">Copiar Beneficiario</button>
+        </div>
+
+        <!-- Mensaje de copia -->
+        <p class="gracias" id="mensajeCopiado"></p>
     </div>
     <footer>Con mucho cariño, os esperamos</footer>
 </section>
 
-<script>
+<div class="flecha-scroll" id="flecha" onclick="scrollAbajo()">
+<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<line x1="12" y1="5" x2="12" y2="19"></line>
+<polyline points="19 12 12 19 5 12"></polyline>
+</svg>
+</div>
+
+<script defer>
+// ABRIR INVITACIÓN
+function abrirInvitacion(e){
+  e.preventDefault();
+  const pantalla=document.getElementById("pantalla-inicial");
+  pantalla.style.opacity="0";
+  setTimeout(()=>{
+    pantalla.style.display="none";
+    const sections=document.querySelectorAll("section");
+    sections.forEach((sec,i)=>setTimeout(()=>sec.classList.add("visible"), i*300));
+    mostrarFlecha();
+  },1000);
+}
+
+// FLECHA
+function mostrarFlecha(){ 
+    const f=document.getElementById("flecha"); 
+    f.style.display="flex"; 
+    setTimeout(()=>{f.style.opacity="1";},50);
+}
+function scrollAbajo(){ 
+    document.querySelector("section").scrollIntoView({behavior:"smooth"});
+}
+
+// CUENTA ATRÁS
+const fechaBoda=new Date(2026,6,11,0,0,0).getTime();
+setInterval(function(){
+  const ahora=new Date().getTime();
+  const diff=fechaBoda-ahora;
+  if(diff<=0){ 
+      document.getElementById("d").innerText=0; 
+      document.getElementById("h").innerText=0;
+      document.getElementById("m").innerText=0; 
+      document.getElementById("s").innerText=0; 
+      return;
+  }
+  document.getElementById("d").innerText=Math.floor(diff/(1000*60*60*24));
+  document.getElementById("h").innerText=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  document.getElementById("m").innerText=Math.floor((diff%(1000*60*60))/(1000*60)); 
+  document.getElementById("s").innerText=Math.floor((diff%(1000*60))/1000);
+},1000);
+
+// COPIAR IBAN
+function copiarIBAN() {
+    const texto = document.getElementById("ibanTexto").innerText;
+    navigator.clipboard.writeText(texto).then(function() {
+        mostrarMensaje("IBAN copiado ✔");
+    });
+}
+
 // COPIAR BENEFICIARIO
 function copiarBeneficiario() {
     const texto = document.getElementById("beneficiarioTexto").innerText;
     navigator.clipboard.writeText(texto).then(function() {
-        document.getElementById("CopiadoBeneficiario").innerText = "Beneficiario copiado ✔";
-        setTimeout(() => {
-            document.getElementById("CopiadoBeneficiario").innerText = "";
-        }, 2000);
+        mostrarMensaje("Beneficiario copiado ✔");
     });
 }
 
-// COPIAR IBAN (ya existía)
-function copiarIBAN() {
-    const texto = document.getElementById("ibanTexto").innerText;
-    navigator.clipboard.writeText(texto).then(function() {
-        document.getElementById("Copiado").innerText = "IBAN copiado ✔";
-        setTimeout(() => {
-            document.getElementById("Copiado").innerText = "";
-        }, 2000);
-    });
+// Mensaje temporal de copia
+function mostrarMensaje(texto) {
+    const msg = document.getElementById("mensajeCopiado");
+    msg.innerText = texto;
+    setTimeout(() => { msg.innerText = ""; }, 2000);
 }
 </script>
+</body>
+    </html>
