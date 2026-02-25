@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://inakiynerea.github.io/boda/ronda-portada.jpg">
 <meta property="og:url" content="https://inakiynerea.github.io/boda/">
 <meta property="og:type" content="website">
-
+<meta name="format-detection" content="telephone=no">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@400;600&family=Italianno&display=swap" rel="stylesheet">
@@ -158,17 +158,10 @@ h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-botto
 .texto-regalo{max-width:600px;margin:0 auto 30px auto;}
 .caja-regalo{margin:0 auto;padding:25px;background:white;max-width:400px;border-radius:15px;box-shadow:0 8px 20px rgba(0,0,0,0.05);}
 .titulo-iban{font-weight:600;letter-spacing:2px;margin-bottom:10px;}
-.iban{font-family:Arial,sans-serif;font-weight:700;color:#000;text-decoration:none;font-size:1em;letter-spacing:1px;text-align:center;overflow-x:auto;white-space:nowrap;}
+.iban{font-family:Arial,sans-serif;font-weight:700;color:#000 !important;text-decoration:none !important;font-size:1em;letter-spacing:1px;text-align:center;overflow-x:auto;white-space:nowrap;}
 .gracias{font-size:0.85em;color:#777;}
 .regalo footer{margin-top:30px;font-size:1em;color:#555;font-style:italic;text-align:center;}
 
-.botones-banco{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-    margin-top:15px;
-}
 /* FLECHA SCROLL */
 .flecha-scroll{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);width:45px;height:45px;border-radius:50%;background-color:rgba(0,0,0,0.1);cursor:pointer;z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.5s;}
 .flecha-scroll svg{width:20px;height:20px;stroke:#000;}
@@ -353,28 +346,140 @@ h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-botto
         podéis ayudarnos a comenzar esta nueva etapa.
     </p>
     <div class="caja-regalo">
-     
-<p class="titulo-iban">DATOS BANCARIOS</p>
+       <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<p class="iban" id="ibanTexto">
-ES33 1583 0001 1891 8952 4373
-</p>
+<title>Nerea e Iñaki</title>
+<meta name="description" content="Te invitamos a celebrar nuestra boda. Abre este enlace para descubrir todos los detalles de nuestro gran día.">
 
-<p style="margin-top:15px;font-weight:600;" id="beneficiarioTexto">
-Beneficiario: Nerea Aizpuru e Iñaki Salaberria
-</p>
+<meta property="og:title" content="Nerea e Iñaki">
+<meta property="og:description" content="Te invitamos a celebrar nuestra boda. Abre este enlace para descubrir todos los detalles de nuestro gran día.">
+<meta property="og:image" content="https://inakiynerea.github.io/boda/ronda-portada.jpg">
+<meta property="og:url" content="https://inakiynerea.github.io/boda/">
+<meta property="og:type" content="website">
+<meta name="format-detection" content="telephone=no">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@400;600&family=Italianno&display=swap" rel="stylesheet">
 
-<div class="botones-banco">
-    <button class="boton-copiar" onclick="copiarIBAN()">
-        Copiar IBAN
-    </button>
+<meta name="theme-color" content="#ffffff">
 
-    <button class="boton-copiar" onclick="copiarBeneficiario()">
-        Copiar Beneficiario
-    </button>
-</div>
+<style>
+/* GLOBAL */
+body{margin:0;font-family:'Cormorant Garamond', serif;background:#fff;color:#000;text-align:center;}
+p{margin:5px;}
 
-<p class="gracias" id="Copiado"></p>
+/* PANTALLA INICIAL */
+#pantalla-inicial{
+    position:fixed;
+    inset:0;
+    background:url("https://inakiynerea.github.io/boda/ronda-portada.jpg?v=4") no-repeat center center;
+    background-size:cover;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    z-index:9999;
+    transition:opacity 1s;
+}
+
+#pantalla-inicial p{
+    color:#fff;
+    font-weight:600;
+    letter-spacing:2px;
+    font-size:1.2em;
+    margin-bottom:20px;
+    margin-top:-80px;
+}
+
+.boton-inicial{
+    border-radius:30px;
+    border:1px solid #fff;
+    background:transparent;
+    color:#fff;
+    font-weight:600;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    transition:0.3s;
+    animation:vibrar 1s infinite;
+    padding:25px 40px;
+    font-size:1.2em;
+    margin-top:15vh;
+}
+.boton-inicial:hover{background:#fff;color:#000;}
+
+/* ============================= */
+/* BOTONES GENERALES OPTIMIZADOS */
+/* ============================= */
+.boton,
+.boton-maps,
+.boton-whatsapp,
+.boton-copiar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid #000;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease, color 0.3s ease;
+    outline: none;
+    box-shadow: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Hover solo en escritorio */
+@media (hover: hover) {
+    .boton:hover,
+    .boton-maps:hover,
+    .boton-whatsapp:hover,
+    .boton-copiar:hover {
+        background: #000;
+        color: #fff;
+    }
+}
+
+/* Eliminar efecto gris al pulsar en móvil */
+.boton:focus,
+.boton:active,
+.boton-maps:focus,
+.boton-maps:active,
+.boton-whatsapp:focus,
+.boton-whatsapp:active,
+.boton-copiar:focus,
+.boton-copiar:active {
+    outline: none !important;
+    box-shadow: none !important;
+    background: #fff !important;
+    color: #000 !important;
+}
+
+/* Quitar resaltado gris global en Android */
+a,
+a:focus,
+a:active {
+    -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+    outline: none !important;
+}
+
+/* Extra: eliminar menú emergente en iOS */
+* {
+    -webkit-touch-callout: none;
+}
+
+/* SECCIONES INVITACIÓN */
+section{
+    pad
     <footer>Con mucho cariño, os esperamos</footer>
 </section>
 
@@ -427,8 +532,8 @@ setInterval(function(){
 },1000);
 
 // COPIAR IBAN
-function copiarIBAN() {
-    const texto = document.getElementById("ibanTexto").innerText.trim();
+    function copiarIBAN() {
+    const texto = document.getElementById("ibanTexto").innerText;
     navigator.clipboard.writeText(texto).then(function() {
         document.getElementById("Copiado").innerText = "IBAN copiado ✔";
         setTimeout(() => {
@@ -438,7 +543,7 @@ function copiarIBAN() {
 }
 
 function copiarBeneficiario() {
-    const texto = document.getElementById("beneficiarioTexto").innerText.trim();
+    const texto = document.getElementById("beneficiarioTexto").innerText;
     navigator.clipboard.writeText(texto).then(function() {
         document.getElementById("Copiado").innerText = "Beneficiario copiado ✔";
         setTimeout(() => {
@@ -446,3 +551,16 @@ function copiarBeneficiario() {
         }, 2000);
     });
 }
+
+</script>
+
+</body>
+    </html>
+
+
+
+        
+
+
+
+              
