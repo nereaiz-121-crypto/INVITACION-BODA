@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Nerea e Iñaki</title>
-<meta name="description" content="Te invitamos a celebrar nuestra boda. Abre este enlace para descubrir todos los detalles de nuestro gran día.">
+<meta name="description" content=" Abre este enlace para descubrir todos los detalles de nuestro gran día.">
 
 <meta property="og:title" content="Nerea e Iñaki">
-<meta property="og:description" content="Te invitamos a celebrar nuestra boda. Abre este enlace para descubrir todos los detalles de nuestro gran día.">
+<meta property="og:description" content="Abre este enlace para descubrir todos los detalles de nuestro gran día.">
 <meta property="og:image" content="https://inakiynerea.github.io/boda/ronda-portada.jpg">
 <meta property="og:url" content="https://inakiynerea.github.io/boda/">
 <meta property="og:type" content="website">
@@ -162,6 +162,13 @@ h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-botto
 .gracias{font-size:0.85em;color:#777;}
 .regalo footer{margin-top:30px;font-size:1em;color:#555;font-style:italic;text-align:center;}
 
+.botones-banco{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
 /* FLECHA SCROLL */
 .flecha-scroll{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);width:45px;height:45px;border-radius:50%;background-color:rgba(0,0,0,0.1);cursor:pointer;z-index:1000;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.5s;}
 .flecha-scroll svg{width:20px;height:20px;stroke:#000;}
@@ -348,19 +355,27 @@ h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-botto
     <div class="caja-regalo">
        <p class="titulo-iban">DATOS BANCARIOS</p>
 
+<p class="titulo-iban">DATOS BANCARIOS</p>
+
 <p class="iban" id="ibanTexto">
 ES33 1583 0001 1891 8952 4373
 </p>
 
-<p style="margin-top:10px;font-weight:600;" id="beneficiarioTexto">
-Beneficiario: N Aizpuru Ortega I Salaberria Garcia
+<p style="margin-top:15px;font-weight:600;" id="beneficiarioTexto">
+Beneficiario: Nerea Aizpuru e Iñaki Salaberria
 </p>
 
-<button class="boton-copiar" onclick="copiarIBAN()">
-Copiar IBAN y Beneficiario
-</button>
-        <p class="gracias" id="Copiado"></p>
-    </div>
+<div class="botones-banco">
+    <button class="boton-copiar" onclick="copiarIBAN()">
+        Copiar IBAN
+    </button>
+
+    <button class="boton-copiar" onclick="copiarBeneficiario()">
+        Copiar Beneficiario
+    </button>
+</div>
+
+<p class="gracias" id="Copiado"></p>
     <footer>Con mucho cariño, os esperamos</footer>
 </section>
 
@@ -414,7 +429,7 @@ setInterval(function(){
 
 // COPIAR IBAN
 function copiarIBAN() {
-    const texto = document.getElementById("ibanTexto").innerText;
+    const texto = document.getElementById("ibanTexto").innerText.trim();
     navigator.clipboard.writeText(texto).then(function() {
         document.getElementById("Copiado").innerText = "IBAN copiado ✔";
         setTimeout(() => {
@@ -422,14 +437,13 @@ function copiarIBAN() {
         }, 2000);
     });
 }
-</script>
-</body>
-    </html>
 
-
-
-        
-
-
-
-                
+function copiarBeneficiario() {
+    const texto = document.getElementById("beneficiarioTexto").innerText.trim();
+    navigator.clipboard.writeText(texto).then(function() {
+        document.getElementById("Copiado").innerText = "Beneficiario copiado ✔";
+        setTimeout(() => {
+            document.getElementById("Copiado").innerText = "";
+        }, 2000);
+    });
+}
