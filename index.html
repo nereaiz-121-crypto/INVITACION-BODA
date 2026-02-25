@@ -8,7 +8,7 @@
 <meta name="description" content="Te invitamos a celebrar nuestra boda. Abre este enlace para descubrir todos los detalles de nuestro gran día.">
 
 <meta property="og:title" content="Nerea e Iñaki">
-<meta property="og:description" content="Te invitamos a celebrar nuestra boda. Abre este enlace para descubrir todos los detalles de nuestro gran día.">
+<meta property="og:description" content="Abre este enlace para descubrir todos los detalles de nuestro gran día.">
 <meta property="og:image" content="https://inakiynerea.github.io/boda/ronda-portada.jpg">
 <meta property="og:url" content="https://inakiynerea.github.io/boda/">
 <meta property="og:type" content="website">
@@ -346,10 +346,22 @@ h2{text-transform:uppercase;font-family:'Cormorant Garamond', serif;margin-botto
         podéis ayudarnos a comenzar esta nueva etapa.
     </p>
     <div class="caja-regalo">
+        <!-- IBAN -->
         <p class="titulo-iban">IBAN</p>
         <p class="iban" id="ibanTexto">ES33 1583 0001 1891 8952 4373</p>
-        <button class="boton-copiar" onclick="copiarIBAN()">Copiar IBAN</button>
-        <p class="gracias" id="Copiado"></p>
+
+        <!-- BENEFICIARIO -->
+        <p class="titulo-iban" style="margin-top:20px;">BENEFICIARIO</p>
+        <p class="iban" id="beneficiarioTexto">N Aizpuru Ortega I Salaberria Garcia</p>
+
+        <!-- BOTONES ALINEADOS -->
+        <div style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-top:15px;">
+            <button class="boton-copiar" onclick="copiarIBAN()">Copiar IBAN</button>
+            <button class="boton-copiar" onclick="copiarBeneficiario()">Copiar Beneficiario</button>
+        </div>
+
+        <!-- Mensaje de copia -->
+        <p class="gracias" id="mensajeCopiado"></p>
     </div>
     <footer>Con mucho cariño, os esperamos</footer>
 </section>
@@ -399,27 +411,32 @@ setInterval(function(){
   }
   document.getElementById("d").innerText=Math.floor(diff/(1000*60*60*24));
   document.getElementById("h").innerText=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-  document.getElementById("m").innerText=Math.floor((diff%(1000*60*60))/(1000*60)); document.getElementById("s").innerText=Math.floor((diff%(1000*60))/1000);
+  document.getElementById("m").innerText=Math.floor((diff%(1000*60*60))/(1000*60)); 
+  document.getElementById("s").innerText=Math.floor((diff%(1000*60))/1000);
 },1000);
 
 // COPIAR IBAN
 function copiarIBAN() {
     const texto = document.getElementById("ibanTexto").innerText;
     navigator.clipboard.writeText(texto).then(function() {
-        document.getElementById("Copiado").innerText = "IBAN copiado ✔";
-        setTimeout(() => {
-            document.getElementById("Copiado").innerText = "";
-        }, 2000);
+        mostrarMensaje("IBAN copiado ✔");
     });
+}
+
+// COPIAR BENEFICIARIO
+function copiarBeneficiario() {
+    const texto = document.getElementById("beneficiarioTexto").innerText;
+    navigator.clipboard.writeText(texto).then(function() {
+        mostrarMensaje("Beneficiario copiado ✔");
+    });
+}
+
+// Mensaje temporal de copia
+function mostrarMensaje(texto) {
+    const msg = document.getElementById("mensajeCopiado");
+    msg.innerText = texto;
+    setTimeout(() => { msg.innerText = ""; }, 2000);
 }
 </script>
 </body>
     </html>
-
-
-
-        
-
-
-
-                
